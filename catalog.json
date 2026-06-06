@@ -1,0 +1,805 @@
+{
+  "title": "Fadi Animations \u00b7 100",
+  "items": [
+    {
+      "id": "slide-edge-left",
+      "label": "Slide From Left",
+      "media": "clips/slide-edge-left.mp4",
+      "type": "video",
+      "category": "edge-slide",
+      "meta": "5 full-height vertical bars span the frame edge-to-edge. Each bar slides in from the left offscreen to its column position, staggered 40ms left-to-right with motion blur. Colors map red\u2192orange\u2192yellow\u2192green\u2192blue in column order. Exit: bars p"
+    },
+    {
+      "id": "slide-edge-right",
+      "label": "Slide From Right",
+      "media": "clips/slide-edge-right.mp4",
+      "type": "video",
+      "category": "edge-slide",
+      "meta": "5 full-height vertical bars enter from right offscreen, staggered 40ms right-to-left. Color order indigo\u2192blue\u2192green\u2192yellow\u2192orange across columns. Exit: overshoot left then snap right offscreen in reverse stagger, motion blur throughout."
+    },
+    {
+      "id": "slide-edge-top",
+      "label": "Slide From Top",
+      "media": "clips/slide-edge-top.mp4",
+      "type": "video",
+      "category": "edge-slide",
+      "meta": "5 full-width horizontal bands drop from top offscreen to their row positions, staggered 40ms top-to-bottom. Colors red\u2192orange\u2192yellow\u2192green\u2192blue top to bottom. Exit: bands pingpong down then snap up offscreen, reverse stagger, motion blur."
+    },
+    {
+      "id": "slide-edge-bottom",
+      "label": "Slide From Bottom",
+      "media": "clips/slide-edge-bottom.mp4",
+      "type": "video",
+      "category": "edge-slide",
+      "meta": "5 full-width horizontal bands rise from bottom offscreen to row positions, staggered 40ms bottom-to-top. Colors violet\u2192blue\u2192green\u2192yellow\u2192orange bottom to top. Exit: overshoot up then snap down offscreen, motion blur."
+    },
+    {
+      "id": "slide-corners-in",
+      "label": "Corner Slabs In",
+      "media": "clips/slide-corners-in.mp4",
+      "type": "video",
+      "category": "edge-slide",
+      "meta": "4 quadrant rectangles each slide in from their respective offscreen corner toward center to tile the screen, staggered 50ms TL\u2192TR\u2192BL\u2192BR. Colors red, yellow, green, blue per quadrant. Exit: each retreats to its corner offscreen, reverse stag"
+    },
+    {
+      "id": "slide-center-split-h",
+      "label": "Center Split Horizontal",
+      "media": "clips/slide-center-split-h.mp4",
+      "type": "video",
+      "category": "split-curtain",
+      "meta": "Screen covered by two halves meeting at vertical centerline. Top half slides down from top, bottom half slides up from bottom, staggered 30ms (top first). Top red, bottom blue. Exit: they part outward to their edges, motion blur on the seam"
+    },
+    {
+      "id": "slide-center-split-v",
+      "label": "Center Split Vertical",
+      "media": "clips/slide-center-split-v.mp4",
+      "type": "video",
+      "category": "split-curtain",
+      "meta": "Two halves meet at horizontal centerline. Left half slides in from left, right half from right, staggered 30ms (left first). Left orange, right green. Exit: part outward to side edges, motion blur."
+    },
+    {
+      "id": "curtain-part-reveal",
+      "label": "Curtain Part",
+      "media": "clips/curtain-part-reveal.mp4",
+      "type": "video",
+      "category": "split-curtain",
+      "meta": "Full screen covered by two vertical color panels (left yellow, right blue) initially closed at center. They slide apart to the side edges revealing video, staggered 40ms (left leads). Exit: slide back to close at center, motion blur."
+    },
+    {
+      "id": "shutter-blinds-h",
+      "label": "Horizontal Blinds",
+      "media": "clips/shutter-blinds-h.mp4",
+      "type": "video",
+      "category": "shutters",
+      "meta": "8 thin full-width horizontal slats stacked top to bottom. Each slat scales from 0 to full height (flipping open) staggered 25ms top-to-bottom. Colors cycle red\u2192violet across the 8 slats in rainbow order. Exit: each slat scales back to 0 in "
+    },
+    {
+      "id": "shutter-blinds-v",
+      "label": "Vertical Blinds",
+      "media": "clips/shutter-blinds-v.mp4",
+      "type": "video",
+      "category": "shutters",
+      "meta": "8 thin full-height vertical slats side by side. Each scales from 0 to full width (flipping open) staggered 25ms left-to-right, rainbow color order. Exit: collapse to 0 width in reverse stagger, motion blur."
+    },
+    {
+      "id": "shutter-alternating",
+      "label": "Alternating Shutters",
+      "media": "clips/shutter-alternating.mp4",
+      "type": "video",
+      "category": "shutters",
+      "meta": "10 full-height vertical slats. Odd slats slide down-open from top, even slats slide up-open from bottom, all staggered 20ms left-to-right. Rainbow color cycle. Exit: each reverses its open direction to close, motion blur."
+    },
+    {
+      "id": "iris-open",
+      "label": "Iris Open",
+      "media": "clips/iris-open.mp4",
+      "type": "video",
+      "category": "radial",
+      "meta": "A solid color disk fills the whole frame then a circular iris hole opens from center, growing to reveal video. Three concentric rings (blue, green, red) each iris-open staggered 60ms inner-first. Exit: iris closes back from edges, motion bl"
+    },
+    {
+      "id": "iris-close",
+      "label": "Iris Close",
+      "media": "clips/iris-close.mp4",
+      "type": "video",
+      "category": "radial",
+      "meta": "Three concentric color rings (red outer, green mid, blue inner) start as thin rims at frame edge and grow inward closing toward center, staggered 60ms outer-first, filling the screen. Exit: shrink back out to edges, motion blur."
+    },
+    {
+      "id": "ring-pulse",
+      "label": "Ring Pulse",
+      "media": "clips/ring-pulse.mp4",
+      "type": "video",
+      "category": "radial",
+      "meta": "7 concentric thin rings centered on frame, all rainbow colors inner-to-outer. They pulse: each ring scales up 15% and back in a quick pingpong, staggered 30ms outward making a breathing wave. Exit: all rings scale to 0 at center staggered, "
+    },
+    {
+      "id": "radial-ripple-point",
+      "label": "Ripple From Point",
+      "media": "clips/radial-ripple-point.mp4",
+      "type": "video",
+      "category": "grid-wave",
+      "meta": "Grid of small squares fills frame. Each square pops in (scale 0\u21921) timed by its distance from a corner origin, creating a circular ripple sweeping across. Color of each square set by rainbow index of its ripple ring. Exit: same ripple order"
+    },
+    {
+      "id": "radial-ripple-center",
+      "label": "Ripple From Center",
+      "media": "clips/radial-ripple-center.mp4",
+      "type": "video",
+      "category": "grid-wave",
+      "meta": "Grid of dots covers frame. Dots scale in by distance from center making concentric ripple rings expand outward, staggered by ring. Each ring a rainbow color. Exit: ripple collapses inward, dots scale to 0, motion blur."
+    },
+    {
+      "id": "grid-wave-rows",
+      "label": "Row Cascade",
+      "media": "clips/grid-wave-rows.mp4",
+      "type": "video",
+      "category": "grid-wave",
+      "meta": "6 full-width rows of color, each row slides in from alternating sides (row1 left, row2 right...), staggered 35ms top-to-bottom. Rainbow color per row. Exit: each row exits to its entry side, reverse stagger, motion blur."
+    },
+    {
+      "id": "grid-wave-cols",
+      "label": "Column Cascade",
+      "media": "clips/grid-wave-cols.mp4",
+      "type": "video",
+      "category": "grid-wave",
+      "meta": "6 full-height columns, each rises in from bottom, staggered 35ms left-to-right. Rainbow per column. Exit: columns drop out the bottom in reverse stagger, motion blur."
+    },
+    {
+      "id": "checkerboard-pop",
+      "label": "Checkerboard Pop",
+      "media": "clips/checkerboard-pop.mp4",
+      "type": "video",
+      "category": "grid-wave",
+      "meta": "8x8 grid of squares. Squares pop in (scale 0\u21921) in checkerboard phase: black-cell squares first, then white-cell squares, each phase staggered diagonally by anti-diagonal index. Two-color alternation cycling rainbow per anti-diagonal. Exit:"
+    },
+    {
+      "id": "checkerboard-flip",
+      "label": "Checkerboard Flip",
+      "media": "clips/checkerboard-flip.mp4",
+      "type": "video",
+      "category": "grid-wave",
+      "meta": "6x6 grid of tiles each flip in on X-axis (scaleY 0\u21921) staggered by row+col sum index. Tile color = rainbow index of (row+col) mod 7. Exit: flip closed (scaleY\u21920) in reverse order, motion blur."
+    },
+    {
+      "id": "mosaic-assemble",
+      "label": "Mosaic Assemble",
+      "media": "clips/mosaic-assemble.mp4",
+      "type": "video",
+      "category": "grid-wave",
+      "meta": "Screen divided into 5x5 tiles. Each tile slides in from a random nearby offscreen position to lock into place, staggered by manhattan distance from top-left. Rainbow assigned per diagonal index. Exit: tiles scatter back out staggered, motio"
+    },
+    {
+      "id": "zoom-pop-center",
+      "label": "Center Zoom Pop",
+      "media": "clips/zoom-pop-center.mp4",
+      "type": "video",
+      "category": "scale-pop",
+      "meta": "A single solid color rectangle scales from 0 to fully cover the frame with an elastic overshoot, then settles. Cycles rainbow if multiple beats. Single layer, heavy motion blur on the scale. Exit: scales back to 0 at center with overshoot."
+    },
+    {
+      "id": "zoom-pop-stack",
+      "label": "Stacked Zoom Pops",
+      "media": "clips/zoom-pop-stack.mp4",
+      "type": "video",
+      "category": "scale-pop",
+      "meta": "3 concentric rounded rectangles (largest blue, mid green, small red) each scale-pop from 0 with elastic overshoot, staggered 70ms largest-first. Exit: each scales to 0 staggered smallest-first, motion blur."
+    },
+    {
+      "id": "pop-grid-burst",
+      "label": "Grid Burst",
+      "media": "clips/pop-grid-burst.mp4",
+      "type": "video",
+      "category": "scale-pop",
+      "meta": "5x5 grid of squares all scale-pop from 0 simultaneously-ish but staggered 15ms by distance from center (outward burst). Each square rainbow color by ring index. Exit: scale to 0 inward, motion blur."
+    },
+    {
+      "id": "elastic-drop-blocks",
+      "label": "Elastic Drop",
+      "media": "clips/elastic-drop-blocks.mp4",
+      "type": "video",
+      "category": "bounce",
+      "meta": "5 full-height bars drop in from top with a bouncy elastic settle (overshoot past floor then settle), staggered 50ms left-to-right. Rainbow per column. Exit: bars launch up offscreen, reverse stagger, motion blur."
+    },
+    {
+      "id": "elastic-bounce-in",
+      "label": "Bounce In Circles",
+      "media": "clips/elastic-bounce-in.mp4",
+      "type": "video",
+      "category": "bounce",
+      "meta": "6 large circles bounce in from bottom offscreen, each with elastic squash-and-stretch on landing, staggered 45ms left-to-right across frame. Rainbow per circle. Exit: bounce up and out, motion blur."
+    },
+    {
+      "id": "rubber-bars-h",
+      "label": "Rubber Bars",
+      "media": "clips/rubber-bars-h.mp4",
+      "type": "video",
+      "category": "bounce",
+      "meta": "5 horizontal bars stretch in from the left edge: each grows in width with elastic overshoot (overshoots full width, snaps back), staggered 40ms top-to-bottom. Rainbow per row. Exit: retract to left with overshoot, motion blur."
+    },
+    {
+      "id": "spin-square-in",
+      "label": "Spinning Squares",
+      "media": "clips/spin-square-in.mp4",
+      "type": "video",
+      "category": "rotation",
+      "meta": "4 squares positioned in a 2x2 layout each rotate 180deg while scaling 0\u21921 to fill their quadrant, staggered 60ms. Colors red, yellow, green, blue. Exit: rotate another 180deg while scaling to 0, motion blur on spin."
+    },
+    {
+      "id": "spin-triangle-fan",
+      "label": "Triangle Fan Spin",
+      "media": "clips/spin-triangle-fan.mp4",
+      "type": "video",
+      "category": "rotation",
+      "meta": "6 triangles arranged radially around center, each rotates into place from -90deg to 0 while scaling up, staggered 30ms clockwise. Rainbow per triangle. Exit: rotate out +90deg and scale to 0, motion blur."
+    },
+    {
+      "id": "pinwheel-radial",
+      "label": "Pinwheel",
+      "media": "clips/pinwheel-radial.mp4",
+      "type": "video",
+      "category": "pinwheel",
+      "meta": "6 solid color wedges (pie slices) fanning from center, each wedge sweeps open by rotating its trailing edge from collapsed to full angular width, staggered 25ms clockwise, building a full color wheel. Rainbow per wedge. Exit: wedges sweep c"
+    },
+    {
+      "id": "pinwheel-double",
+      "label": "Double Pinwheel",
+      "media": "clips/pinwheel-double.mp4",
+      "type": "video",
+      "category": "pinwheel",
+      "meta": "Two interleaved sets of 4 wedges each. Inner set sweeps clockwise, outer ring set sweeps counterclockwise, both staggered 30ms. Inner warm colors (red/orange/yellow), outer cool (green/blue/indigo/violet). Exit: both sweep closed opposite d"
+    },
+    {
+      "id": "rotate-frame-nest",
+      "label": "Nested Rotating Frames",
+      "media": "clips/rotate-frame-nest.mp4",
+      "type": "video",
+      "category": "rotation",
+      "meta": "4 concentric square outline frames, each rotates in from 45deg offset to aligned while scaling up, staggered 50ms outer-first. Rainbow per frame. Exit: each rotates out and scales to 0, motion blur."
+    },
+    {
+      "id": "hex-grow-grid",
+      "label": "Hex Grid Grow",
+      "media": "clips/hex-grow-grid.mp4",
+      "type": "video",
+      "category": "shape-family",
+      "meta": "Honeycomb of ~12 hexagons. Each hex scales 0\u21921 from its center staggered by row then column, rainbow color cycling per hex. Exit: hexagons scale to 0 in reverse order, motion blur."
+    },
+    {
+      "id": "hex-spin-cluster",
+      "label": "Hex Spin Cluster",
+      "media": "clips/hex-spin-cluster.mp4",
+      "type": "video",
+      "category": "shape-family",
+      "meta": "7 hexagons in a flower cluster (1 center + 6 around). Center pops first, then surrounding 6 spin-in (rotate 60deg + scale) staggered 30ms clockwise. Center violet, petals rainbow. Exit: petals spin out then center, motion blur."
+    },
+    {
+      "id": "diamond-cascade",
+      "label": "Diamond Cascade",
+      "media": "clips/diamond-cascade.mp4",
+      "type": "video",
+      "category": "shape-family",
+      "meta": "5 large diamonds (rotated squares) in a row each scale-pop in from 0, staggered 40ms left-to-right. Rainbow per diamond. Exit: scale to 0 reverse stagger, motion blur."
+    },
+    {
+      "id": "diamond-grid-wave",
+      "label": "Diamond Grid Wave",
+      "media": "clips/diamond-grid-wave.mp4",
+      "type": "video",
+      "category": "shape-family",
+      "meta": "Grid of small diamonds covering frame. Each scales in staggered by column index forming a left-to-right wave. Rainbow color per column. Exit: collapse to 0 right-to-left, motion blur."
+    },
+    {
+      "id": "plus-cross-burst",
+      "label": "Plus Burst",
+      "media": "clips/plus-cross-burst.mp4",
+      "type": "video",
+      "category": "shape-family",
+      "meta": "Grid of 4x4 plus/cross shapes. Each plus draws in by scaling its horizontal then vertical arm, staggered by distance from center (outward burst). Rainbow per ring. Exit: arms retract inward, motion blur."
+    },
+    {
+      "id": "cross-sweep-fill",
+      "label": "Cross Sweep",
+      "media": "clips/cross-sweep-fill.mp4",
+      "type": "video",
+      "category": "shape-family",
+      "meta": "A giant plus shape fills center: vertical bar wipes down from top, horizontal bar wipes right from left, staggered 80ms (vertical first). Vertical bar red, horizontal bar blue. Exit: bars retract to their start edges, motion blur."
+    },
+    {
+      "id": "triangle-row-flip",
+      "label": "Triangle Row Flip",
+      "media": "clips/triangle-row-flip.mp4",
+      "type": "video",
+      "category": "shape-family",
+      "meta": "6 triangles alternating up/down point in a row, each flips in on Y-axis (scaleX 0\u21921), staggered 30ms left-to-right. Rainbow per triangle. Exit: flip closed reverse stagger, motion blur."
+    },
+    {
+      "id": "bar-stack-fill",
+      "label": "Stack Fill Bars",
+      "media": "clips/bar-stack-fill.mp4",
+      "type": "video",
+      "category": "stack-fall",
+      "meta": "6 horizontal bars stack from bottom upward: each bar slides up into the growing stack from below, staggered 35ms, building floor-to-ceiling. Rainbow bottom-to-top. Exit: bars slide down out of frame top-to-bottom, motion blur."
+    },
+    {
+      "id": "falling-blocks",
+      "label": "Falling Blocks",
+      "media": "clips/falling-blocks.mp4",
+      "type": "video",
+      "category": "stack-fall",
+      "meta": "5 columns, each a tall block falls from top and stacks at the bottom with a small bounce, staggered 50ms left-to-right (Tetris-like). Rainbow per column. Exit: blocks fall through the bottom in reverse stagger, motion blur."
+    },
+    {
+      "id": "column-rise",
+      "label": "Columns Rising",
+      "media": "clips/column-rise.mp4",
+      "type": "video",
+      "category": "stack-fall",
+      "meta": "7 full-height columns each grow upward from the bottom edge (scaleY anchored bottom) staggered 25ms left-to-right, like a rising equalizer to full height. Rainbow per column. Exit: shrink down to bottom reverse stagger, motion blur."
+    },
+    {
+      "id": "column-drop",
+      "label": "Columns Dropping",
+      "media": "clips/column-drop.mp4",
+      "type": "video",
+      "category": "stack-fall",
+      "meta": "7 full-height columns each grow downward from the top edge (scaleY anchored top) staggered 25ms right-to-left. Rainbow per column. Exit: shrink up to top, motion blur."
+    },
+    {
+      "id": "eq-bars-bounce",
+      "label": "EQ Bars",
+      "media": "clips/eq-bars-bounce.mp4",
+      "type": "video",
+      "category": "stack-fall",
+      "meta": "9 vertical equalizer bars at the bottom each shoot up to varying heights with elastic overshoot, staggered 20ms center-out. Rainbow cycling per bar. Exit: bars drop to 0 height center-out, motion blur."
+    },
+    {
+      "id": "concentric-poly-grow",
+      "label": "Concentric Polygons",
+      "media": "clips/concentric-poly-grow.mp4",
+      "type": "video",
+      "category": "concentric",
+      "meta": "5 concentric pentagon outlines centered, each scales from 0 to its size staggered 50ms inner-first, building nested rings. Rainbow per pentagon. Exit: scale to 0 outer-first, motion blur."
+    },
+    {
+      "id": "concentric-square-zoom",
+      "label": "Concentric Square Zoom",
+      "media": "clips/concentric-square-zoom.mp4",
+      "type": "video",
+      "category": "concentric",
+      "meta": "6 concentric filled squares (largest behind), each scale-pops from 0 staggered 40ms largest-first so smaller ones layer on top. Rainbow largest-to-smallest. Exit: scale to 0 smallest-first revealing layers, motion blur."
+    },
+    {
+      "id": "concentric-rotate-tri",
+      "label": "Rotating Concentric Triangles",
+      "media": "clips/concentric-rotate-tri.mp4",
+      "type": "video",
+      "category": "concentric",
+      "meta": "4 concentric triangle outlines, alternating pointing up/down, each spins in (rotate 60deg) while scaling up staggered 50ms inner-first. Rainbow per triangle. Exit: spin out and scale to 0, motion blur."
+    },
+    {
+      "id": "dot-field-rain",
+      "label": "Dot Rain",
+      "media": "clips/dot-field-rain.mp4",
+      "type": "video",
+      "category": "dot-field",
+      "meta": "Grid of dots. Each dot drops in from above its slot (small vertical slide + fade-free pop) staggered by column so it rains left-to-right. Rainbow per column. Exit: dots drop down out of slots staggered, motion blur."
+    },
+    {
+      "id": "halftone-wave",
+      "label": "Halftone Wave",
+      "media": "clips/halftone-wave.mp4",
+      "type": "video",
+      "category": "dot-field",
+      "meta": "Dense halftone dot grid. Dots scale from 0 to full size in a sine wave sweeping left-to-right (each column phase-offset). Dot color rainbow by column. Exit: dots scale to 0 in same wave, motion blur."
+    },
+    {
+      "id": "dot-spiral",
+      "label": "Dot Spiral",
+      "media": "clips/dot-spiral.mp4",
+      "type": "video",
+      "category": "dot-field",
+      "meta": "~40 dots arranged on an Archimedean spiral from center outward. Each dot pops in staggered 15ms along the spiral path. Rainbow cycling along spiral. Exit: dots pop to 0 from outer end inward, motion blur."
+    },
+    {
+      "id": "dot-grid-checker-wave",
+      "label": "Dot Checker Wave",
+      "media": "clips/dot-grid-checker-wave.mp4",
+      "type": "video",
+      "category": "dot-field",
+      "meta": "Dot grid where dots pop in two interleaved checker phases; phase A sweeps a diagonal-free wave by row index, phase B follows offset. Rainbow per row. Exit: dots scale to 0 same order, motion blur."
+    },
+    {
+      "id": "scanline-build-h",
+      "label": "Horizontal Scanlines",
+      "media": "clips/scanline-build-h.mp4",
+      "type": "video",
+      "category": "scanline",
+      "meta": "12 thin full-width horizontal lines build the frame: each line wipes in from the left to full width, staggered 18ms top-to-bottom like a scan. Rainbow cycling per line. Exit: lines wipe out to the right top-to-bottom, motion blur."
+    },
+    {
+      "id": "scanline-build-v",
+      "label": "Vertical Scanlines",
+      "media": "clips/scanline-build-v.mp4",
+      "type": "video",
+      "category": "scanline",
+      "meta": "12 thin full-height vertical lines: each wipes up from the bottom to full height, staggered 18ms left-to-right. Rainbow cycling per line. Exit: lines wipe down out, motion blur."
+    },
+    {
+      "id": "scanline-interlace",
+      "label": "Interlace Scan",
+      "media": "clips/scanline-interlace.mp4",
+      "type": "video",
+      "category": "scanline",
+      "meta": "16 horizontal lines; odd lines wipe in from left, even from right, all staggered 12ms top-to-bottom. Rainbow per line. Exit: each wipes out to its entry side, motion blur."
+    },
+    {
+      "id": "sweep-fill-cw",
+      "label": "Clock Sweep Fill",
+      "media": "clips/sweep-fill-cw.mp4",
+      "type": "video",
+      "category": "sweep",
+      "meta": "A solid color wedge sweeps clockwise from 12 o'clock like a radar, filling the whole frame as the angle completes 360deg. Two passes layer (outer ring then inner) staggered, rainbow per pass. Exit: wedge sweeps clockwise erasing back to emp"
+    },
+    {
+      "id": "sweep-fill-bars",
+      "label": "Cascade Wipe Bars",
+      "media": "clips/sweep-fill-bars.mp4",
+      "type": "video",
+      "category": "sweep",
+      "meta": "6 full-height bars each fill via a top-down wipe within the bar, staggered 30ms left-to-right creating a cascade. Rainbow per bar. Exit: each bar wipes out bottom-up reverse stagger, motion blur."
+    },
+    {
+      "id": "sweep-diagonal-free-corner",
+      "label": "Corner Arc Sweep",
+      "media": "clips/sweep-diagonal-free-corner.mp4",
+      "type": "video",
+      "category": "sweep",
+      "meta": "A quarter-circle arc of color expands from one corner sweeping to opposite corner via growing radius (concentric quarter-rings). 4 quarter-rings staggered 40ms, rainbow per ring. Exit: rings shrink back to corner, motion blur."
+    },
+    {
+      "id": "expand-circles-grid",
+      "label": "Expanding Circle Grid",
+      "media": "clips/expand-circles-grid.mp4",
+      "type": "video",
+      "category": "expand-contract",
+      "meta": "3x3 grid of circles each expand from 0 radius to overlap-fill their cell, staggered by row then col 30ms. Rainbow per cell index. Exit: circles contract to 0, motion blur."
+    },
+    {
+      "id": "contract-rings-edge",
+      "label": "Contracting Edge Rings",
+      "media": "clips/contract-rings-edge.mp4",
+      "type": "video",
+      "category": "expand-contract",
+      "meta": "5 thin color rings start as the full-frame border and contract inward toward center to a point, staggered 40ms outer-first. Rainbow per ring. Exit: rings expand back out to frame edge, motion blur."
+    },
+    {
+      "id": "breathe-blob-stack",
+      "label": "Breathing Stack",
+      "media": "clips/breathe-blob-stack.mp4",
+      "type": "video",
+      "category": "expand-contract",
+      "meta": "4 stacked rounded rectangles centered, each scales in then continuously breathes (gentle pingpong scale 5%) while present, staggered 50ms. Rainbow per layer. Exit: each scales to 0 staggered, motion blur."
+    },
+    {
+      "id": "segmented-arc-ring",
+      "label": "Segmented Arc Ring",
+      "media": "clips/segmented-arc-ring.mp4",
+      "type": "video",
+      "category": "arc",
+      "meta": "A ring made of 8 arc segments with small gaps. Each segment draws in (angular wipe along its arc) staggered 25ms clockwise. Rainbow per segment. Exit: segments un-draw clockwise, motion blur."
+    },
+    {
+      "id": "arc-stack-bottom",
+      "label": "Arc Stack",
+      "media": "clips/arc-stack-bottom.mp4",
+      "type": "video",
+      "category": "arc",
+      "meta": "5 concentric half-circle arcs rising from the bottom edge (rainbow), each scales up from the baseline staggered 40ms inner-first like a sunrise. Exit: arcs shrink back into the bottom edge, motion blur."
+    },
+    {
+      "id": "arc-meter-sweep",
+      "label": "Arc Meter",
+      "media": "clips/arc-meter-sweep.mp4",
+      "type": "video",
+      "category": "arc",
+      "meta": "A thick semicircular gauge arc at top of frame fills from left end to right by angular wipe; 3 stacked gauge arcs staggered 50ms. Rainbow per arc. Exit: arcs empty right-to-left, motion blur."
+    },
+    {
+      "id": "spiral-bars-rotate",
+      "label": "Spiral Bars",
+      "media": "clips/spiral-bars-rotate.mp4",
+      "type": "video",
+      "category": "spiral",
+      "meta": "8 radial bars from center, each grows outward (length 0\u2192full) while the whole set rotates slightly, staggered 20ms clockwise forming a spiral burst. Rainbow per bar. Exit: bars retract while rotating opposite, motion blur."
+    },
+    {
+      "id": "spiral-squares-unfurl",
+      "label": "Spiral Squares",
+      "media": "clips/spiral-squares-unfurl.mp4",
+      "type": "video",
+      "category": "spiral",
+      "meta": "~16 small squares placed along a spiral path from center, each pops in staggered 12ms outward along the spiral. Rainbow cycling. Exit: pop to 0 from outer inward, motion blur."
+    },
+    {
+      "id": "nested-frames-zoom",
+      "label": "Nested Frame Zoom",
+      "media": "clips/nested-frames-zoom.mp4",
+      "type": "video",
+      "category": "nested",
+      "meta": "5 concentric rectangle outline frames zoom in from 0 to their nested sizes staggered 45ms outer-first, like a tunnel forming. Rainbow per frame. Exit: frames zoom to 0 at center inner-first, motion blur."
+    },
+    {
+      "id": "nested-frames-pulse",
+      "label": "Nested Frame Pulse",
+      "media": "clips/nested-frames-pulse.mp4",
+      "type": "video",
+      "category": "nested",
+      "meta": "6 nested rectangle frames already present pulse outward: each frame scales up 10% and back in a ripple staggered 25ms inner-out repeatedly. Rainbow per frame. Exit: frames scale to 0 outer-first, motion blur."
+    },
+    {
+      "id": "matrix-flip-rows",
+      "label": "Matrix Flip Rows",
+      "media": "clips/matrix-flip-rows.mp4",
+      "type": "video",
+      "category": "grid-wave",
+      "meta": "6 full-width rows each flip in on the X axis (scaleY 0\u21921 anchored center) staggered 30ms top-to-bottom. Rainbow per row. Exit: flip closed reverse stagger, motion blur."
+    },
+    {
+      "id": "matrix-flip-cols",
+      "label": "Matrix Flip Cols",
+      "media": "clips/matrix-flip-cols.mp4",
+      "type": "video",
+      "category": "grid-wave",
+      "meta": "6 full-height columns each flip in on the Y axis (scaleX 0\u21921) staggered 30ms left-to-right. Rainbow per column. Exit: flip closed reverse stagger, motion blur."
+    },
+    {
+      "id": "wipe-down-bands",
+      "label": "Wipe Down Bands",
+      "media": "clips/wipe-down-bands.mp4",
+      "type": "video",
+      "category": "wipe",
+      "meta": "4 full-width bands each reveal by a top-to-bottom wipe staggered 50ms top-to-bottom. Rainbow per band. Exit: bands wipe out bottom-to-top reverse stagger, motion blur."
+    },
+    {
+      "id": "wipe-left-bands",
+      "label": "Wipe Left Bands",
+      "media": "clips/wipe-left-bands.mp4",
+      "type": "video",
+      "category": "wipe",
+      "meta": "4 full-height bands each reveal by a right-to-left wipe staggered 50ms left-to-right. Rainbow per band. Exit: wipe out left-to-right, motion blur."
+    },
+    {
+      "id": "wipe-split-out",
+      "label": "Split Wipe Out",
+      "media": "clips/wipe-split-out.mp4",
+      "type": "video",
+      "category": "wipe",
+      "meta": "Full color screen splits and wipes outward: a horizontal seam at center opens, top wipes up off, bottom wipes down off, staggered 30ms. Single rainbow color per beat cycle. Exit (entry inverse): wipes in from top and bottom to close, motion"
+    },
+    {
+      "id": "venetian-flip-h",
+      "label": "Venetian Flip",
+      "media": "clips/venetian-flip-h.mp4",
+      "type": "video",
+      "category": "shutters",
+      "meta": "10 horizontal slats each rotate open around their own horizontal axis from edge-on (scaleY 0) to flat (scaleY 1), staggered 18ms top-to-bottom. Rainbow cycling per slat. Exit: rotate edge-on reverse stagger, motion blur."
+    },
+    {
+      "id": "louver-v-flip",
+      "label": "Louvers Vertical",
+      "media": "clips/louver-v-flip.mp4",
+      "type": "video",
+      "category": "shutters",
+      "meta": "10 vertical slats rotate open around their vertical axis (scaleX 0\u21921), staggered 18ms left-to-right, rainbow cycling. Exit: rotate edge-on reverse stagger, motion blur."
+    },
+    {
+      "id": "bar-flip-3d-h",
+      "label": "3D Bar Flip H",
+      "media": "clips/bar-flip-3d-h.mp4",
+      "type": "video",
+      "category": "rotation",
+      "meta": "5 horizontal bars each flip in on X axis with a perspective tilt (scaleY 0\u21921 + slight skew) staggered 40ms top-to-bottom. Rainbow per bar. Exit: flip closed reverse, motion blur."
+    },
+    {
+      "id": "slab-push-stack",
+      "label": "Slab Push Stack",
+      "media": "clips/slab-push-stack.mp4",
+      "type": "video",
+      "category": "stack-fall",
+      "meta": "5 horizontal slabs slide in from the left and push-stack from bottom up: each new slab shoves the prior ones up slightly, staggered 45ms. Rainbow per slab. Exit: slabs slide out left top-to-bottom, motion blur."
+    },
+    {
+      "id": "brick-lay",
+      "label": "Brick Lay",
+      "media": "clips/brick-lay.mp4",
+      "type": "video",
+      "category": "grid-wave",
+      "meta": "Brick-pattern grid (offset rows). Each brick pops in scaling from 0 staggered row-by-row left-to-right. Rainbow per row. Exit: bricks scale to 0 bottom-to-top reverse, motion blur."
+    },
+    {
+      "id": "venn-circles-merge",
+      "label": "Venn Merge",
+      "media": "clips/venn-circles-merge.mp4",
+      "type": "video",
+      "category": "expand-contract",
+      "meta": "3 large overlapping circles expand from their centers to overlap at frame center, staggered 50ms. Red, green, blue circles. Exit: circles contract to 0 staggered, motion blur."
+    },
+    {
+      "id": "orbit-dots-ring",
+      "label": "Orbiting Dots",
+      "media": "clips/orbit-dots-ring.mp4",
+      "type": "video",
+      "category": "dot-field",
+      "meta": "12 dots arranged on a ring around center, each scales in then the whole ring rotates a quarter turn, staggered 15ms clockwise on entry. Rainbow per dot. Exit: dots scale to 0 clockwise while ring rotates back, motion blur."
+    },
+    {
+      "id": "target-rings-zoom",
+      "label": "Target Rings",
+      "media": "clips/target-rings-zoom.mp4",
+      "type": "video",
+      "category": "radial",
+      "meta": "6 concentric filled rings (bullseye), each ring scale-pops from 0 staggered 35ms outer-first stacking a target. Rainbow per ring. Exit: rings scale to 0 inner-first, motion blur."
+    },
+    {
+      "id": "wedge-fan-bottom",
+      "label": "Wedge Fan",
+      "media": "clips/wedge-fan-bottom.mp4",
+      "type": "video",
+      "category": "pinwheel",
+      "meta": "7 wedges fanning upward from a point at the bottom-center, each wedge sweeps open by rotating from vertical staggered 25ms left-to-right like a hand fan. Rainbow per wedge. Exit: wedges sweep closed back to vertical, motion blur."
+    },
+    {
+      "id": "split-quad-pinwheel",
+      "label": "Quad Pinwheel",
+      "media": "clips/split-quad-pinwheel.mp4",
+      "type": "video",
+      "category": "pinwheel",
+      "meta": "4 right-triangle quadrants each rotate in 90deg around the center while scaling up to tile the frame, staggered 50ms clockwise. Red, yellow, green, blue. Exit: rotate out 90deg and scale to 0, motion blur."
+    },
+    {
+      "id": "accordion-h",
+      "label": "Accordion Horizontal",
+      "media": "clips/accordion-h.mp4",
+      "type": "video",
+      "category": "shutters",
+      "meta": "8 vertical panels accordion open from a single center seam: panels expand outward in pairs from center, staggered 25ms center-out, filling the frame. Rainbow cycling outward. Exit: accordion collapses back to center, motion blur."
+    },
+    {
+      "id": "accordion-v",
+      "label": "Accordion Vertical",
+      "media": "clips/accordion-v.mp4",
+      "type": "video",
+      "category": "shutters",
+      "meta": "8 horizontal panels accordion open from a center horizontal seam outward in pairs, staggered 25ms center-out. Rainbow cycling. Exit: collapse to center, motion blur."
+    },
+    {
+      "id": "zigzag-bars-in",
+      "label": "Zigzag Bars",
+      "media": "clips/zigzag-bars-in.mp4",
+      "type": "video",
+      "category": "edge-slide",
+      "meta": "7 full-height bars: odd bars slide down from top, even bars slide up from bottom, staggered 25ms left-to-right creating a zigzag entry. Rainbow per bar. Exit: each exits its entry direction reverse stagger, motion blur."
+    },
+    {
+      "id": "chevron-stack",
+      "label": "Chevron Stack",
+      "media": "clips/chevron-stack.mp4",
+      "type": "video",
+      "category": "shape-family",
+      "meta": "6 chevron (V) shapes stacked vertically, each slides in from the side it points away from, staggered 30ms top-to-bottom. Rainbow per chevron. Exit: slide out reverse stagger, motion blur."
+    },
+    {
+      "id": "arrow-sweep-right",
+      "label": "Arrow Sweep",
+      "media": "clips/arrow-sweep-right.mp4",
+      "type": "video",
+      "category": "shape-family",
+      "meta": "5 large arrow shapes pointing right, each slides in from the left and overshoots, staggered 35ms top-to-bottom across the frame. Rainbow per arrow. Exit: arrows shoot off right reverse stagger, motion blur."
+    },
+    {
+      "id": "ring-segments-rotate",
+      "label": "Rotating Ring Segments",
+      "media": "clips/ring-segments-rotate.mp4",
+      "type": "video",
+      "category": "arc",
+      "meta": "A ring split into 6 arc segments; the whole ring is assembled as each segment scales in radially staggered 25ms clockwise, then the assembled ring rotates 30deg. Rainbow per segment. Exit: segments scale out radially while ring counter-rota"
+    },
+    {
+      "id": "petal-bloom",
+      "label": "Petal Bloom",
+      "media": "clips/petal-bloom.mp4",
+      "type": "video",
+      "category": "rotation",
+      "meta": "8 petal (rounded-tip) shapes arranged radially around center, each rotates out from collapsed-at-center to bloomed position while scaling up, staggered 25ms clockwise. Rainbow per petal. Exit: petals fold back into center, motion blur."
+    },
+    {
+      "id": "square-rain-grid",
+      "label": "Square Rain",
+      "media": "clips/square-rain-grid.mp4",
+      "type": "video",
+      "category": "grid-wave",
+      "meta": "Grid of squares where each square drops from offscreen-top to its slot, staggered by column (left columns first) so squares rain across. Rainbow per column. Exit: squares drop out the bottom of their slots staggered, motion blur."
+    },
+    {
+      "id": "tri-tessellate",
+      "label": "Triangle Tessellation",
+      "media": "clips/tri-tessellate.mp4",
+      "type": "video",
+      "category": "grid-wave",
+      "meta": "Frame tiled with alternating up/down triangles. Each triangle scales in from 0 staggered by column left-to-right. Rainbow per column. Exit: triangles scale to 0 right-to-left, motion blur."
+    },
+    {
+      "id": "hex-honeycomb-ripple",
+      "label": "Honeycomb Ripple",
+      "media": "clips/hex-honeycomb-ripple.mp4",
+      "type": "video",
+      "category": "grid-wave",
+      "meta": "Honeycomb hex grid; hexes pop in by distance from center forming a hexagonal ripple outward, staggered by ring. Rainbow per ring. Exit: collapse inward, motion blur."
+    },
+    {
+      "id": "split-thirds-out",
+      "label": "Thirds Split Out",
+      "media": "clips/split-thirds-out.mp4",
+      "type": "video",
+      "category": "split-curtain",
+      "meta": "3 vertical thirds of the frame: outer two slide off to their side edges while middle stays, then middle slides up off, staggered 40ms. Left red, mid green, right blue. Reverse this order for entry. Motion blur."
+    },
+    {
+      "id": "flag-stripes-rise",
+      "label": "Flag Stripes Rise",
+      "media": "clips/flag-stripes-rise.mp4",
+      "type": "video",
+      "category": "edge-slide",
+      "meta": "7 horizontal stripes each rise from the bottom edge into their row slot (slide up), staggered 25ms bottom-to-top. Rainbow per stripe in order. Exit: stripes slide up out the top reverse stagger, motion blur."
+    },
+    {
+      "id": "comb-teeth-down",
+      "label": "Comb Teeth",
+      "media": "clips/comb-teeth-down.mp4",
+      "type": "video",
+      "category": "shutters",
+      "meta": "9 vertical teeth descend from the top edge to varying lengths (full or partial height) like a comb, staggered 20ms left-to-right. Rainbow per tooth. Exit: teeth retract up reverse stagger, motion blur."
+    },
+    {
+      "id": "barcode-build",
+      "label": "Barcode Build",
+      "media": "clips/barcode-build.mp4",
+      "type": "video",
+      "category": "scanline",
+      "meta": "~20 thin vertical bars of varying widths fill the frame left-to-right, each scaling up from 0 height anchored bottom, staggered 10ms left-to-right. Rainbow cycling per bar. Exit: bars shrink to 0 right-to-left, motion blur."
+    },
+    {
+      "id": "frame-corners-draw",
+      "label": "Corner Brackets",
+      "media": "clips/frame-corners-draw.mp4",
+      "type": "video",
+      "category": "nested",
+      "meta": "4 L-shaped corner brackets at the frame corners each draw in (two arms extend), staggered 40ms TL\u2192TR\u2192BR\u2192BL, then a center crosshair pops. Brackets rainbow, crosshair violet. Exit: brackets retract and crosshair shrinks, motion blur."
+    },
+    {
+      "id": "radial-bars-burst",
+      "label": "Radial Bars Burst",
+      "media": "clips/radial-bars-burst.mp4",
+      "type": "video",
+      "category": "radial",
+      "meta": "16 thin bars radiating from center, each grows outward from center to frame edge (length 0\u2192full), staggered 12ms clockwise forming a starburst. Rainbow cycling per bar. Exit: bars retract to center, motion blur."
+    },
+    {
+      "id": "squares-cascade-diag-free",
+      "label": "Squares Knight Cascade",
+      "media": "clips/squares-cascade-diag-free.mp4",
+      "type": "video",
+      "category": "grid-wave",
+      "meta": "Grid of squares pop in ordered strictly by row index (all of row1, then row2...) with within-row left-to-right micro-stagger \u2014 pure orthogonal cascade, never diagonal. Rainbow per row. Exit: scale to 0 by row bottom-up, motion blur."
+    },
+    {
+      "id": "iris-polygon-open",
+      "label": "Polygon Iris",
+      "media": "clips/iris-polygon-open.mp4",
+      "type": "video",
+      "category": "radial",
+      "meta": "A solid color fills frame then a hexagonal iris hole opens from center growing to reveal video; 3 nested hexagon irises (red, green, blue) staggered 50ms inner-first. Exit: hexagon irises close from edges, motion blur."
+    }
+  ]
+}
