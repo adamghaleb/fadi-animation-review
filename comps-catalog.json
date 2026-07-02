@@ -1,5 +1,5 @@
 {
- "title": "Position Comps \u00b7 v2",
+ "title": "Position Comps \u00b7 126",
  "items": [
   {
    "id": "mood-grid-reveal",
@@ -156,6 +156,606 @@
    "label": "Band Behind \u2014 Street",
    "media": "clips/comps/band-rainbow-street.mp4",
    "meta": "The rainbow band on the night street footage."
+  },
+  {
+   "id": "a10-count-up-cells",
+   "label": "a1 \u00b7 count up cells",
+   "media": "clips/comps/a10-count-up-cells.mp4",
+   "meta": "[grid rules] One Fadi cell lights per beat in a shuffled order until the frame is full colour, then it all resets \u2014 a loading bar made of the song."
+  },
+  {
+   "id": "a1-luma-grid",
+   "label": "a1 \u00b7 luma grid",
+   "media": "clips/comps/a1-luma-grid.mp4",
+   "meta": "[grid rules] Cells go moodboard where the FOOTAGE is dark \u2014 the image eats itself."
+  },
+  {
+   "id": "a2-velocity-grid",
+   "label": "a2 \u00b7 velocity grid",
+   "media": "clips/comps/a2-velocity-grid.mp4",
+   "meta": "[grid rules] The board only bleeds through while you're MOVING; stand still and the footage heals."
+  },
+  {
+   "id": "a3-ripple-grid",
+   "label": "a3 \u00b7 ripple grid",
+   "media": "clips/comps/a3-ripple-grid.mp4",
+   "meta": "[grid rules] Reveal wave: cells flip to the board in an expanding ring from you."
+  },
+  {
+   "id": "a4-checker-pop",
+   "label": "a4 \u00b7 checker pop",
+   "media": "clips/comps/a4-checker-pop.mp4",
+   "meta": "[grid rules] Checkerboard of footage/board; the parity FLIPS on every beat."
+  },
+  {
+   "id": "a5-column-race",
+   "label": "a5 \u00b7 column race",
+   "media": "clips/comps/a5-column-race.mp4",
+   "meta": "[grid rules] Everything you've WALKED PAST turns to board \u2014 columns left of you flip (or right, if you're facing the other way)."
+  },
+  {
+   "id": "a6-row-equalizer",
+   "label": "a6 \u00b7 row equalizer",
+   "media": "clips/comps/a6-row-equalizer.mp4",
+   "meta": "[grid rules] Solid Fadi rows rise from the floor to exactly your height \u2014 the frame is an EQ bar and you're the level."
+  },
+  {
+   "id": "a7-grid-magnet",
+   "label": "a7 \u00b7 grid magnet",
+   "media": "clips/comps/a7-grid-magnet.mp4",
+   "meta": "[grid rules] Inverse mood-grid: the board clings NEAR you and footage lives far \u2014 you drag the moodboard around like a field."
+  },
+  {
+   "id": "a8-diag-wipe-cells",
+   "label": "a8 \u00b7 diag wipe cells",
+   "media": "clips/comps/a8-diag-wipe-cells.mp4",
+   "meta": "[grid rules] A cell-quantized wipe front sweeps the frame corner-to-corner forever; board on one side, you punch through both."
+  },
+  {
+   "id": "a9-cell-jitter",
+   "label": "a9 \u00b7 cell jitter",
+   "media": "clips/comps/a9-cell-jitter.mp4",
+   "meta": "[grid rules] Cells you touch get knocked loose \u2014 occupied cells jitter offset with a Fadi edge, everything else holds still."
+  },
+  {
+   "id": "b10-cutout-paper",
+   "label": "b1 \u00b7 cutout paper",
+   "media": "clips/comps/b10-cutout-paper.mp4",
+   "meta": "[stencil] Flat paper poster: solid Fadi background, you cut out with one hard drop shadow."
+  },
+  {
+   "id": "b1-stencil-stack",
+   "label": "b1 \u00b7 stencil stack",
+   "media": "clips/comps/b1-stencil-stack.mp4",
+   "meta": "[stencil] Three time-staggered copies of your silhouette, each a window into a DIFFERENT moodboard."
+  },
+  {
+   "id": "b2-contour-topo",
+   "label": "b2 \u00b7 contour topo",
+   "media": "clips/comps/b2-contour-topo.mp4",
+   "meta": "[stencil] Topographic you: expanding dilated outlines of your body ring outward in the palette."
+  },
+  {
+   "id": "b3-edge-neon",
+   "label": "b3 \u00b7 edge neon",
+   "media": "clips/comps/b3-edge-neon.mp4",
+   "meta": "[stencil] The world goes near-black; only your outline burns in cycling neon."
+  },
+  {
+   "id": "b4-me-negative",
+   "label": "b4 \u00b7 me negative",
+   "media": "clips/comps/b4-me-negative.mp4",
+   "meta": "[stencil] The world stays true; YOU are the negative."
+  },
+  {
+   "id": "b5-me-static",
+   "label": "b5 \u00b7 me static",
+   "media": "clips/comps/b5-me-static.mp4",
+   "meta": "[stencil] You're a person-shaped hole of analog static in an otherwise normal shot."
+  },
+  {
+   "id": "b6-body-loop",
+   "label": "b6 \u00b7 body loop",
+   "media": "clips/comps/b6-body-loop.mp4",
+   "meta": "[stencil] A transparent Fadi loop plays INSIDE your silhouette \u2014 you're made of the brand system."
+  },
+  {
+   "id": "b7-halo-leak",
+   "label": "b7 \u00b7 halo leak",
+   "media": "clips/comps/b7-halo-leak.mp4",
+   "meta": "[stencil] The moodboard leaks out around your edges \u2014 an aura of somewhere else."
+  },
+  {
+   "id": "b8-double-exposure",
+   "label": "b8 \u00b7 double exposure",
+   "media": "clips/comps/b8-double-exposure.mp4",
+   "meta": "[stencil] You are filled with yourself two seconds ago \u2014 a walking double exposure."
+  },
+  {
+   "id": "b9-xray",
+   "label": "b9 \u00b7 xray",
+   "media": "clips/comps/b9-xray.mp4",
+   "meta": "[stencil] Inside your silhouette the image flips to an inverted, edge-burned x-ray; the world stays normal."
+  },
+  {
+   "id": "c10-body-slices",
+   "label": "c1 \u00b7 body slices",
+   "media": "clips/comps/c10-body-slices.mp4",
+   "meta": "[stamps] You get shredded into horizontal ribbons, each slice thrown a different distance sideways."
+  },
+  {
+   "id": "c1-kaleido-me",
+   "label": "c1 \u00b7 kaleido me",
+   "media": "clips/comps/c1-kaleido-me.mp4",
+   "meta": "[stamps] Kaleidoscope: your silhouette mirrored four ways around frame center, each copy a different Fadi color."
+  },
+  {
+   "id": "c2-radial-stamps",
+   "label": "c2 \u00b7 radial stamps",
+   "media": "clips/comps/c2-radial-stamps.mp4",
+   "meta": "[stamps] Small copies of your silhouette circle around you like a clock of selves."
+  },
+  {
+   "id": "c3-shrink-army",
+   "label": "c3 \u00b7 shrink army",
+   "media": "clips/comps/c3-shrink-army.mp4",
+   "meta": "[stamps] A marching row of progressively smaller you crossing the floor line."
+  },
+  {
+   "id": "c4-stamp-rain",
+   "label": "c4 \u00b7 stamp rain",
+   "media": "clips/comps/c4-stamp-rain.mp4",
+   "meta": "[stamps] Tiny colored yous rain down the frame behind you."
+  },
+  {
+   "id": "c5-mirror-floor",
+   "label": "c5 \u00b7 mirror floor",
+   "media": "clips/comps/c5-mirror-floor.mp4",
+   "meta": "[stamps] A real mirror floor: the actual footage of you reflected below your feet, fading with depth."
+  },
+  {
+   "id": "c6-wall-shadow",
+   "label": "c6 \u00b7 wall shadow",
+   "media": "clips/comps/c6-wall-shadow.mp4",
+   "meta": "[stamps] A hard black sun-shadow of you thrown up the wall behind, skewed."
+  },
+  {
+   "id": "c7-stamp-trail-scale",
+   "label": "c7 \u00b7 stamp trail scale",
+   "media": "clips/comps/c7-stamp-trail-scale.mp4",
+   "meta": "[stamps] Your past selves trail behind you AND shrink with age \u2014 a vanishing history."
+  },
+  {
+   "id": "c8-twin-delay",
+   "label": "c8 \u00b7 twin delay",
+   "media": "clips/comps/c8-twin-delay.mp4",
+   "meta": "[stamps] A full-color twin of you from a second ago performs beside you."
+  },
+  {
+   "id": "c9-crowd-fill",
+   "label": "c9 \u00b7 crowd fill",
+   "media": "clips/comps/c9-crowd-fill.mp4",
+   "meta": "[stamps] The negative space fills with a tiled crowd of tiny silhouette-yous in all seven colors."
+  },
+  {
+   "id": "d10-shatter-shift",
+   "label": "d1 \u00b7 shatter shift",
+   "media": "clips/comps/d10-shatter-shift.mp4",
+   "meta": "[warps] The frame breaks into big glass tiles; tiles near you slide out of register."
+  },
+  {
+   "id": "d1-ripple-out",
+   "label": "d1 \u00b7 ripple out",
+   "media": "clips/comps/d1-ripple-out.mp4",
+   "meta": "[warps] The world ripples in rings emanating from wherever you stand."
+  },
+  {
+   "id": "d2-column-shift",
+   "label": "d2 \u00b7 column shift",
+   "media": "clips/comps/d2-column-shift.mp4",
+   "meta": "[warps] Pixel columns you occupy get pushed upward \u2014 you shove the image out of your way."
+  },
+  {
+   "id": "d3-row-shear",
+   "label": "d3 \u00b7 row shear",
+   "media": "clips/comps/d3-row-shear.mp4",
+   "meta": "[warps] Rows shear sideways proportional to your movement speed \u2014 the frame drags behind your motion."
+  },
+  {
+   "id": "d4-mirror-split",
+   "label": "d4 \u00b7 mirror split",
+   "media": "clips/comps/d4-mirror-split.mp4",
+   "meta": "[warps] The world mirrors at your centerline \u2014 you are the axis of symmetry."
+  },
+  {
+   "id": "d5-zoom-pull",
+   "label": "d5 \u00b7 zoom pull",
+   "media": "clips/comps/d5-zoom-pull.mp4",
+   "meta": "[warps] Vertigo: the background zooms breathing in and out of your position; you stay pin sharp."
+  },
+  {
+   "id": "d6-pixel-drip",
+   "label": "d6 \u00b7 pixel drip",
+   "media": "clips/comps/d6-pixel-drip.mp4",
+   "meta": "[warps] Everything below you melts \u2014 the columns under your body drip to the bottom of the frame."
+  },
+  {
+   "id": "d7-chroma-pull",
+   "label": "d7 \u00b7 chroma pull",
+   "media": "clips/comps/d7-chroma-pull.mp4",
+   "meta": "[warps] Radial chromatic aberration blooming away from you \u2014 RGB tears apart at the edges of your world."
+  },
+  {
+   "id": "d8-lens-bulge",
+   "label": "d8 \u00b7 lens bulge",
+   "media": "clips/comps/d8-lens-bulge.mp4",
+   "meta": "[warps] A magnifying lens travels with you, bulging the image around your body."
+  },
+  {
+   "id": "d9-wave-flag",
+   "label": "d9 \u00b7 wave flag",
+   "media": "clips/comps/d9-wave-flag.mp4",
+   "meta": "[warps] The whole frame waves like fabric; the harder you move, the harder it flaps."
+  },
+  {
+   "id": "e10-ghost-pull",
+   "label": "e1 \u00b7 ghost pull",
+   "media": "clips/comps/e10-ghost-pull.mp4",
+   "meta": "[time] A fading Fadi ghost of where you just were chases you in place."
+  },
+  {
+   "id": "e1-slit-horizontal",
+   "label": "e1 \u00b7 slit horizontal",
+   "media": "clips/comps/e1-slit-horizontal.mp4",
+   "meta": "[time] Slitscan: every row of the frame comes from a different moment \u2014 time smears vertically."
+  },
+  {
+   "id": "e2-slit-vertical",
+   "label": "e2 \u00b7 slit vertical",
+   "media": "clips/comps/e2-slit-vertical.mp4",
+   "meta": "[time] Slitscan sideways: columns further right live further in the past."
+  },
+  {
+   "id": "e3-motion-extract",
+   "label": "e3 \u00b7 motion extract",
+   "media": "clips/comps/e3-motion-extract.mp4",
+   "meta": "[time] Only MOVEMENT is visible \u2014 the still world goes black, change burns in Fadi color."
+  },
+  {
+   "id": "e4-freeze-grid",
+   "label": "e4 \u00b7 freeze grid",
+   "media": "clips/comps/e4-freeze-grid.mp4",
+   "meta": "[time] A wall of frozen moments: each cell holds a different past instant, refreshing round-robin \u2014 you live across all of them."
+  },
+  {
+   "id": "e5-long-exposure",
+   "label": "e5 \u00b7 long exposure",
+   "media": "clips/comps/e5-long-exposure.mp4",
+   "meta": "[time] Light-painting: bright pixels persist and decay slowly \u2014 you drag luminous smears through the frame."
+  },
+  {
+   "id": "e6-strobe-freeze",
+   "label": "e6 \u00b7 strobe freeze",
+   "media": "clips/comps/e6-strobe-freeze.mp4",
+   "meta": "[time] The world freezes on every beat; only you keep moving through the stills."
+  },
+  {
+   "id": "e7-time-split",
+   "label": "e7 \u00b7 time split",
+   "media": "clips/comps/e7-time-split.mp4",
+   "meta": "[time] Left half now, right half 1.5 seconds ago \u2014 you can cross into your own past."
+  },
+  {
+   "id": "e8-onion-skin",
+   "label": "e8 \u00b7 onion skin",
+   "media": "clips/comps/e8-onion-skin.mp4",
+   "meta": "[time] Animator's onion skin: three ghosts of your recent past layered under the live frame."
+  },
+  {
+   "id": "e9-rewind-stack",
+   "label": "e9 \u00b7 rewind stack",
+   "media": "clips/comps/e9-rewind-stack.mp4",
+   "meta": "[time] Vertical bands stepping back in time toward the right edge, hard Fadi seams between epochs."
+  },
+  {
+   "id": "f10-subtitle-echo",
+   "label": "f1 \u00b7 subtitle echo",
+   "media": "clips/comps/f10-subtitle-echo.mp4",
+   "meta": "[type+data] One word zoom-echoed at five sizes behind you \u2014 type with depth."
+  },
+  {
+   "id": "f1-coord-hud",
+   "label": "f1 \u00b7 coord hud",
+   "media": "clips/comps/f1-coord-hud.mp4",
+   "meta": "[type+data] Live coordinates: crosshair + x/y readout pinned to your centroid, corner ticks on your bbox \u2014 pure micrographic HUD."
+  },
+  {
+   "id": "f2-word-ticker",
+   "label": "f2 \u00b7 word ticker",
+   "media": "clips/comps/f2-word-ticker.mp4",
+   "meta": "[type+data] A stock-ticker band of lyric words scrolls along your feet line."
+  },
+  {
+   "id": "f3-count-beats",
+   "label": "f3 \u00b7 count beats",
+   "media": "clips/comps/f3-count-beats.mp4",
+   "meta": "[type+data] A giant bar-counter (1 2 3 4) strobes behind you on the grid of the song."
+  },
+  {
+   "id": "f4-ascii-bg",
+   "label": "f4 \u00b7 ascii bg",
+   "media": "clips/comps/f4-ascii-bg.mp4",
+   "meta": "[type+data] The world renders as text \u2014 background quantized to glyph-brightness blocks; you stay photographic."
+  },
+  {
+   "id": "f5-word-gravity",
+   "label": "f5 \u00b7 word gravity",
+   "media": "clips/comps/f5-word-gravity.mp4",
+   "meta": "[type+data] Lyric words rain from the sky and pile up on your head and shoulders."
+  },
+  {
+   "id": "f6-type-curtain",
+   "label": "f6 \u00b7 type curtain",
+   "media": "clips/comps/f6-type-curtain.mp4",
+   "meta": "[type+data] Giant vertical word-columns fill the negative space either side of you like curtains."
+  },
+  {
+   "id": "f7-area-meter",
+   "label": "f7 \u00b7 area meter",
+   "media": "clips/comps/f7-area-meter.mp4",
+   "meta": "[type+data] An instrument panel: a live bar meter of how much frame you occupy, with % readout \u2014 closer = louder."
+  },
+  {
+   "id": "f8-name-repeat",
+   "label": "f8 \u00b7 name repeat",
+   "media": "clips/comps/f8-name-repeat.mp4",
+   "meta": "[type+data] 'adam fadi' wallpapered across the frame; rows nearest you glow brightest."
+  },
+  {
+   "id": "f9-clock-orbit",
+   "label": "f9 \u00b7 clock orbit",
+   "media": "clips/comps/f9-clock-orbit.mp4",
+   "meta": "[type+data] Timecode digits orbit you like a data halo."
+  },
+  {
+   "id": "g10-vignette-color",
+   "label": "g1 \u00b7 vignette color",
+   "media": "clips/comps/g10-vignette-color.mp4",
+   "meta": "[color fields] A breathing colored vignette closes in on your position like a tunnel of light."
+  },
+  {
+   "id": "g1-posterize-pal",
+   "label": "g1 \u00b7 posterize pal",
+   "media": "clips/comps/g1-posterize-pal.mp4",
+   "meta": "[color fields] The whole world posterized to the nearest of the seven Fadi colors; you stay photographic."
+  },
+  {
+   "id": "g2-heat-dist",
+   "label": "g2 \u00b7 heat dist",
+   "media": "clips/comps/g2-heat-dist.mp4",
+   "meta": "[color fields] Proximity heatmap: the background is colored purely by distance to you, banded through the palette."
+  },
+  {
+   "id": "g3-luma-bands",
+   "label": "g3 \u00b7 luma bands",
+   "media": "clips/comps/g3-luma-bands.mp4",
+   "meta": "[color fields] The image contour-maps itself: brightness quantized into Fadi bands like elevation lines."
+  },
+  {
+   "id": "g4-hue-wave",
+   "label": "g4 \u00b7 hue wave",
+   "media": "clips/comps/g4-hue-wave.mp4",
+   "meta": "[color fields] A tint-wave sweeps across the background left to right forever."
+  },
+  {
+   "id": "g5-gradient-sky",
+   "label": "g5 \u00b7 gradient sky",
+   "media": "clips/comps/g5-gradient-sky.mp4",
+   "meta": "[color fields] Studio backdrop: the entire background swapped for a vertical Fadi gradient \u2014 suddenly it's a color shoot."
+  },
+  {
+   "id": "g6-scanline-tint",
+   "label": "g6 \u00b7 scanline tint",
+   "media": "clips/comps/g6-scanline-tint.mp4",
+   "meta": "[color fields] CRT scanlines in two alternating Fadi colors ride the background."
+  },
+  {
+   "id": "g7-channel-swap-bg",
+   "label": "g7 \u00b7 channel swap bg",
+   "media": "clips/comps/g7-channel-swap-bg.mp4",
+   "meta": "[color fields] The background's RGB channels rotate every beat \u2014 reality cycles through wrong colors; you stay correct."
+  },
+  {
+   "id": "g8-threshold-ink",
+   "label": "g8 \u00b7 threshold ink",
+   "media": "clips/comps/g8-threshold-ink.mp4",
+   "meta": "[color fields] Two-tone screenprint: background reduced to black + one Fadi ink; you in full color on top."
+  },
+  {
+   "id": "g9-fadi-noise",
+   "label": "g9 \u00b7 fadi noise",
+   "media": "clips/comps/g9-fadi-noise.mp4",
+   "meta": "[color fields] Confetti static: background pixels randomly snap to palette colors, reshuffling every few frames."
+  },
+  {
+   "id": "h10-dip-flash",
+   "label": "h1 \u00b7 dip flash",
+   "media": "clips/comps/h10-dip-flash.mp4",
+   "meta": "[multi-source] On every beat the world dips to solid Fadi for two frames \u2014 a color heartbeat with you riding on top."
+  },
+  {
+   "id": "h1-board-split",
+   "label": "h1 \u00b7 board split",
+   "media": "clips/comps/h1-board-split.mp4",
+   "meta": "[multi-source] The world CHANGES at your body: everything left of you is the moodboard's world, everything right stays real."
+  },
+  {
+   "id": "h2-loop-corners",
+   "label": "h2 \u00b7 loop corners",
+   "media": "clips/comps/h2-loop-corners.mp4",
+   "meta": "[multi-source] Four different transparent Fadi loops pinned to the corners frame you like living stickers."
+  },
+  {
+   "id": "h3-board-floor",
+   "label": "h3 \u00b7 board floor",
+   "media": "clips/comps/h3-board-floor.mp4",
+   "meta": "[multi-source] The bottom third becomes moodboard flooring \u2014 you stand on the reference world."
+  },
+  {
+   "id": "h4-sky-swap-fadi",
+   "label": "h4 \u00b7 sky swap fadi",
+   "media": "clips/comps/h4-sky-swap-fadi.mp4",
+   "meta": "[multi-source] Everything above your head becomes the board \u2014 a swapped sky that follows your height."
+  },
+  {
+   "id": "h5-tri-stack",
+   "label": "h5 \u00b7 tri stack",
+   "media": "clips/comps/h5-tri-stack.mp4",
+   "meta": "[multi-source] Three stacked realities \u2014 board / footage / inverted footage \u2014 and you pass through all of them intact."
+  },
+  {
+   "id": "h6-multi-board-wall",
+   "label": "h6 \u00b7 multi board wall",
+   "media": "clips/comps/h6-multi-board-wall.mp4",
+   "meta": "[multi-source] A wall of windows, each cell playing a DIFFERENT moodboard; the cells you occupy open onto the real footage."
+  },
+  {
+   "id": "h7-picture-frame",
+   "label": "h7 \u00b7 picture frame",
+   "media": "clips/comps/h7-picture-frame.mp4",
+   "meta": "[multi-source] The moodboard becomes a thick living frame; the footage survives only in the center window \u2014 until you lean out of it."
+  },
+  {
+   "id": "h8-loop-rain",
+   "label": "h8 \u00b7 loop rain",
+   "media": "clips/comps/h8-loop-rain.mp4",
+   "meta": "[multi-source] A column of transparent Fadi loops scrolls down behind you like brand weather."
+  },
+  {
+   "id": "h9-static-gate",
+   "label": "h9 \u00b7 static gate",
+   "media": "clips/comps/h9-static-gate.mp4",
+   "meta": "[multi-source] Reality flickers: the background flips footage/board on every beat \u2014 you never flicker."
+  },
+  {
+   "id": "i10-trail-ribbon",
+   "label": "i1 \u00b7 trail ribbon",
+   "media": "clips/comps/i10-trail-ribbon.mp4",
+   "meta": "[particles] A ribbon of light traces the exact path your body has travelled through the frame."
+  },
+  {
+   "id": "i1-confetti-burst",
+   "label": "i1 \u00b7 confetti burst",
+   "media": "clips/comps/i1-confetti-burst.mp4",
+   "meta": "[particles] Confetti erupts from your chest on every beat and falls with gravity."
+  },
+  {
+   "id": "i2-orbit-dots",
+   "label": "i2 \u00b7 orbit dots",
+   "media": "clips/comps/i2-orbit-dots.mp4",
+   "meta": "[particles] Electrons: dots orbit your body on three tilted rings."
+  },
+  {
+   "id": "i3-spark-feet",
+   "label": "i3 \u00b7 spark feet",
+   "media": "clips/comps/i3-spark-feet.mp4",
+   "meta": "[particles] Sparks kick up from your feet while you move \u2014 grinding the floor."
+  },
+  {
+   "id": "i4-beam-scan",
+   "label": "i4 \u00b7 beam scan",
+   "media": "clips/comps/i4-beam-scan.mp4",
+   "meta": "[particles] A scanner beam sweeps the frame; wherever it crosses your body it flashes and briefly exposes the board."
+  },
+  {
+   "id": "i5-laser-web",
+   "label": "i5 \u00b7 laser web",
+   "media": "clips/comps/i5-laser-web.mp4",
+   "meta": "[particles] Tracking lasers: lines from the frame corners and edges converge on you wherever you go."
+  },
+  {
+   "id": "i6-bounce-ball",
+   "label": "i6 \u00b7 bounce ball",
+   "media": "clips/comps/i6-bounce-ball.mp4",
+   "meta": "[particles] A Fadi ball bounces off the top of your head, forever."
+  },
+  {
+   "id": "i7-rain-lines",
+   "label": "i7 \u00b7 rain lines",
+   "media": "clips/comps/i7-rain-lines.mp4",
+   "meta": "[particles] Neon rain that refuses to touch you \u2014 the streaks part around your silhouette."
+  },
+  {
+   "id": "i8-grid-pulse",
+   "label": "i8 \u00b7 grid pulse",
+   "media": "clips/comps/i8-grid-pulse.mp4",
+   "meta": "[particles] A wireframe grid over the world; the lines glow and thicken near your body like you charge them."
+  },
+  {
+   "id": "i9-star-field",
+   "label": "i9 \u00b7 star field",
+   "media": "clips/comps/i9-star-field.mp4",
+   "meta": "[particles] A parallax starfield streams behind you; your movement speed drives warp speed."
+  },
+  {
+   "id": "j10-film-burn",
+   "label": "j1 \u00b7 film burn",
+   "media": "clips/comps/j10-film-burn.mp4",
+   "meta": "[camera fakes] Projector trouble on the beat: gate weave, edge burn blooming in, film grain everywhere."
+  },
+  {
+   "id": "j1-crash-zoom",
+   "label": "j1 \u00b7 crash zoom",
+   "media": "clips/comps/j1-crash-zoom.mp4",
+   "meta": "[camera fakes] Fake crash-zoom: the camera punches into your face on every beat and eases back out."
+  },
+  {
+   "id": "j2-dutch-sway",
+   "label": "j2 \u00b7 dutch sway",
+   "media": "clips/comps/j2-dutch-sway.mp4",
+   "meta": "[camera fakes] The frame breathes on a slow dutch-angle sway, pivoting around you."
+  },
+  {
+   "id": "j3-handheld-shake",
+   "label": "j3 \u00b7 handheld shake",
+   "media": "clips/comps/j3-handheld-shake.mp4",
+   "meta": "[camera fakes] Aggressive handheld energy: micro-jitter always, a violent kick on every beat."
+  },
+  {
+   "id": "j4-split-screen-duo",
+   "label": "j4 \u00b7 split screen duo",
+   "media": "clips/comps/j4-split-screen-duo.mp4",
+   "meta": "[camera fakes] Split-screen duo: wide you on the left, tight close-up you on the right \u2014 one take, two shots."
+  },
+  {
+   "id": "j5-pip-zoom-stack",
+   "label": "j5 \u00b7 pip zoom stack",
+   "media": "clips/comps/j5-pip-zoom-stack.mp4",
+   "meta": "[camera fakes] Droste: the frame contains itself, three levels deep, each nested copy pinned near you."
+  },
+  {
+   "id": "j6-freeze-stamp-beat",
+   "label": "j6 \u00b7 freeze stamp beat",
+   "media": "clips/comps/j6-freeze-stamp-beat.mp4",
+   "meta": "[camera fakes] Every bar drops a new polaroid freeze of you into a growing stack in the corner."
+  },
+  {
+   "id": "j7-whip-pan-board",
+   "label": "j7 \u00b7 whip pan board",
+   "media": "clips/comps/j7-whip-pan-board.mp4",
+   "meta": "[camera fakes] Every two bars the camera whip-pans \u2014 the frame smears horizontally and lands in the moodboard world, then whips back."
+  },
+  {
+   "id": "j8-letterbox-track",
+   "label": "j8 \u00b7 letterbox track",
+   "media": "clips/comps/j8-letterbox-track.mp4",
+   "meta": "[camera fakes] Cinemascope bars that ride your height \u2014 the movie crops itself around you."
+  },
+  {
+   "id": "j9-security-cam",
+   "label": "j9 \u00b7 security cam",
+   "media": "clips/comps/j9-security-cam.mp4",
+   "meta": "[camera fakes] CCTV: green-washed, scanline flicker, REC dot, timestamp \u2014 and your bbox tagged SUBJECT 001."
   }
  ]
 }
