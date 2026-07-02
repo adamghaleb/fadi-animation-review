@@ -162,6 +162,22 @@
         background: #000;
         pointer-events: none;
       }
+      .card .livenote {
+        width: 100%;
+        margin-top: 10px;
+        background: #0b0b0d;
+        color: #eee;
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        padding: 8px 10px;
+        font: 13px inherit;
+        resize: none;
+        height: 46px;
+      }
+      .card .livenote:focus {
+        height: 72px;
+        outline: 1px solid var(--cyan);
+      }
       .card .body {
         padding: 13px 16px 16px;
       }
@@ -468,6 +484,8 @@
 
     <script>
       const KEY = "fadi-comps-feedback-v2";
+      const DKEY = "fadi-comps-drafts";
+      const drafts = JSON.parse(localStorage.getItem(DKEY) || "{}");
       const OLD = JSON.parse(
         localStorage.getItem("fadi-comps-feedback-v1") || "{}",
       );
@@ -517,6 +535,14 @@
         v.preload = "auto";
         const body = el("div", "body");
         body.append(el("h2", null, it.label), el("p", null, it.meta));
+        const ta = el("textarea", "livenote");
+        ta.placeholder = "type notes live — saved with your swipe";
+        ta.value = drafts[it.id] || (fb[it.id] && fb[it.id].note) || "";
+        ta.oninput = () => {
+          drafts[it.id] = ta.value;
+          localStorage.setItem(DKEY, JSON.stringify(drafts));
+        };
+        body.append(ta);
         card.append(
           v,
           body,
@@ -562,6 +588,7 @@
           flag: card.querySelector(".stamp.flag"),
         };
         const down = (e) => {
+          if (e.target && e.target.tagName === "TEXTAREA") return;
           dragging = true;
           t0 = performance.now();
           x0 = e.clientX;
@@ -603,7 +630,10 @@
 
       function fly(card, v) {
         const it = items[idx];
-        fb[it.id] = { v, note: (fb[it.id] && fb[it.id].note) || "" };
+        const lta = card.querySelector ? card.querySelector(".livenote") : null;
+        const note = (lta && lta.value.trim()) || drafts[it.id] ||
+                     (fb[it.id] && fb[it.id].note) || "";
+        fb[it.id] = { v, note };
         save();
         if (navigator.vibrate) navigator.vibrate(v === "nope" ? 18 : 10);
         card.style.transition = "transform .45s var(--curve), opacity .4s";
