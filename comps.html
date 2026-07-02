@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Position Comps · swipe</title>
+    <style>
+      :root {
+        --pink: #ff0060;
+        --green: #11ff05;
+        --cyan: #05d3ff;
+        --yellow: #ffe400;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        -webkit-tap-highlight-color: transparent;
+      }
+      body {
+        background: #0b0b0d;
+        color: #eee;
+        font:
+          16px/1.4 -apple-system,
+          Helvetica,
+          sans-serif;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      header {
+        padding: 14px 16px 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+      header h1 {
+        font-size: 17px;
+        letter-spacing: -0.02em;
+      }
+      header a {
+        color: #888;
+        font-size: 13px;
+        text-decoration: none;
+      }
+      #prog {
+        color: var(--cyan);
+        font-size: 13px;
+        font-variant-numeric: tabular-nums;
+      }
+      #stage {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 14px;
+        position: relative;
+      }
+      .card {
+        width: 100%;
+        max-width: 560px;
+        background: #141417;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 40px #000a;
+        transition:
+          transform 0.18s,
+          opacity 0.18s;
+        touch-action: pan-y;
+      }
+      .card.fly-l {
+        transform: translateX(-120vw) rotate(-14deg);
+        opacity: 0;
+      }
+      .card.fly-r {
+        transform: translateX(120vw) rotate(14deg);
+        opacity: 0;
+      }
+      .card video {
+        width: 100%;
+        aspect-ratio: 16/9;
+        display: block;
+        background: #000;
+      }
+      .card .body {
+        padding: 12px 14px 14px;
+      }
+      .card h2 {
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .card p {
+        color: #9a9aa2;
+        font-size: 13px;
+        min-height: 36px;
+      }
+      .card textarea {
+        width: 100%;
+        margin-top: 10px;
+        background: #0b0b0d;
+        color: #eee;
+        border: 1px solid #26262c;
+        border-radius: 9px;
+        padding: 9px 10px;
+        font: 14px inherit;
+        resize: none;
+        height: 56px;
+      }
+      #btns {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        padding: 10px 0 max(18px, env(safe-area-inset-bottom));
+      }
+      #btns button {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        border: none;
+        font-size: 26px;
+        cursor: pointer;
+        background: #1b1b20;
+        color: #fff;
+      }
+      #nope {
+        color: var(--pink) !important;
+        border: 2px solid var(--pink) !important;
+      }
+      #meh {
+        color: var(--yellow) !important;
+        border: 2px solid #444 !important;
+        width: 52px !important;
+        height: 52px !important;
+        align-self: center;
+      }
+      #love {
+        color: var(--green) !important;
+        border: 2px solid var(--green) !important;
+      }
+      #done {
+        display: none;
+        flex: 1;
+        padding: 20px 18px;
+        overflow: auto;
+      }
+      #done h2 {
+        margin-bottom: 12px;
+      }
+      #done ul {
+        list-style: none;
+        margin-bottom: 16px;
+      }
+      #done li {
+        padding: 6px 0;
+        border-bottom: 1px solid #1c1c22;
+        font-size: 14px;
+      }
+      .tag-love {
+        color: var(--green);
+      }
+      .tag-nope {
+        color: var(--pink);
+      }
+      .tag-meh {
+        color: var(--yellow);
+      }
+      #copy {
+        background: var(--green);
+        color: #000;
+        border: none;
+        border-radius: 12px;
+        padding: 14px 20px;
+        font-weight: 700;
+        font-size: 15px;
+        width: 100%;
+      }
+      #reset {
+        background: none;
+        border: none;
+        color: #666;
+        margin-top: 14px;
+        width: 100%;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>position comps</h1>
+      <span id="prog"></span><a href="index.html">← lab</a>
+    </header>
+    <div id="stage"></div>
+    <div id="btns">
+      <button id="nope">✕</button><button id="meh">~</button
+      ><button id="love">❤</button>
+    </div>
+    <section id="done">
+      <h2>done — feedback</h2>
+      <ul id="summary"></ul>
+      <button id="copy">copy feedback for claude</button>
+      <button id="reset">start over</button>
+    </section>
+    <script>
+      const KEY = "fadi-comps-feedback-v1";
+      let items = [],
+        idx = 0,
+        fb = JSON.parse(localStorage.getItem(KEY) || "{}");
+      const stage = document.getElementById("stage"),
+        prog = document.getElementById("prog");
+
+      function el(tag, cls, text) {
+        const e = document.createElement(tag);
+        if (cls) e.className = cls;
+        if (text !== undefined) e.textContent = text;
+        return e;
+      }
+
+      fetch("comps-catalog.json")
+        .then((r) => r.json())
+        .then((c) => {
+          items = c.items;
+          idx = items.findIndex((it) => !(it.id in fb));
+          if (idx < 0) idx = items.length;
+          render();
+        });
+
+      function render() {
+        stage.replaceChildren();
+        if (idx >= items.length) {
+          return finish();
+        }
+        document.getElementById("btns").style.display = "flex";
+        document.getElementById("done").style.display = "none";
+        const it = items[idx];
+        prog.textContent = idx + 1 + " / " + items.length;
+        const card = el("div", "card");
+        const v = el("video");
+        v.src = it.media;
+        v.autoplay = v.loop = v.muted = true;
+        v.playsInline = true;
+        v.setAttribute("playsinline", "");
+        const body = el("div", "body");
+        body.append(el("h2", null, it.label), el("p", null, it.meta));
+        const ta = el("textarea");
+        ta.placeholder = "notes (optional) — sizing, color, timing…";
+        body.append(ta);
+        card.append(v, body);
+        stage.append(card);
+        let x0 = null;
+        card.addEventListener(
+          "touchstart",
+          (e) => {
+            x0 = e.touches[0].clientX;
+          },
+          { passive: true },
+        );
+        card.addEventListener(
+          "touchend",
+          (e) => {
+            if (x0 === null) return;
+            const dx = e.changedTouches[0].clientX - x0;
+            x0 = null;
+            if (dx > 70) vote("love");
+            else if (dx < -70) vote("nope");
+          },
+          { passive: true },
+        );
+      }
+      function vote(v) {
+        const it = items[idx],
+          card = stage.querySelector(".card");
+        const note = card ? card.querySelector("textarea").value.trim() : "";
+        fb[it.id] = { v, note };
+        localStorage.setItem(KEY, JSON.stringify(fb));
+        if (card) {
+          card.classList.add(v === "nope" ? "fly-l" : "fly-r");
+        }
+        setTimeout(() => {
+          idx++;
+          render();
+        }, 180);
+      }
+      document.getElementById("love").onclick = () => vote("love");
+      document.getElementById("nope").onclick = () => vote("nope");
+      document.getElementById("meh").onclick = () => vote("meh");
+
+      function finish() {
+        document.getElementById("btns").style.display = "none";
+        const d = document.getElementById("done");
+        d.style.display = "block";
+        prog.textContent = items.length + " / " + items.length;
+        const ul = document.getElementById("summary");
+        ul.replaceChildren();
+        items.forEach((it) => {
+          const f = fb[it.id];
+          if (!f) return;
+          const icon = f.v === "love" ? "❤" : f.v === "nope" ? "✕" : "~";
+          const li = el("li");
+          li.append(
+            el("span", "tag-" + f.v, icon),
+            document.createTextNode(" " + it.label),
+          );
+          if (f.note) {
+            const em = el("em", null, " — " + f.note);
+            li.append(em);
+          }
+          ul.append(li);
+        });
+      }
+      document.getElementById("copy").onclick = async () => {
+        const out = {
+          when: new Date().toISOString(),
+          deck: "position-comps-v1",
+          feedback: items.map((it) => ({
+            id: it.id,
+            ...(fb[it.id] || { v: "skipped" }),
+          })),
+        };
+        const txt = "FADI COMP FEEDBACK\n" + JSON.stringify(out, null, 1);
+        try {
+          await navigator.clipboard.writeText(txt);
+          document.getElementById("copy").textContent =
+            "copied — paste it to claude";
+        } catch (e) {
+          prompt("copy this:", txt);
+        }
+      };
+      document.getElementById("reset").onclick = () => {
+        localStorage.removeItem(KEY);
+        fb = {};
+        idx = 0;
+        render();
+      };
+    </script>
+  </body>
+</html>
