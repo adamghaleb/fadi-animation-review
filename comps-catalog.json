@@ -1,107 +1,161 @@
 {
-  "title": "Position Comps \u00b7 v1",
-  "items": [
-    {
-      "id": "mood-grid-reveal",
-      "label": "Mood Grid Reveal",
-      "media": "clips/comps/mood-grid-reveal.mp4",
-      "meta": "Moodboard plays fast in a grid of squares w/ thin white lines \u2014 any cell YOU occupy punches through to the footage. (your new idea, live)"
-    },
-    {
-      "id": "band-rainbow-graffiti",
-      "label": "Band Behind \u2014 Rainbow",
-      "media": "clips/comps/band-rainbow-graffiti.mp4",
-      "meta": "Thick 7-color Fadi band through your torso, behind you. Stripes march on beats."
-    },
-    {
-      "id": "band-solid-squares",
-      "label": "Band Behind \u2014 Solid",
-      "media": "clips/comps/band-solid-squares.mp4",
-      "meta": "Same band, single Fadi color riding the global color cycle."
-    },
-    {
-      "id": "beam-vertical-street",
-      "label": "Vertical Beam",
-      "media": "clips/comps/beam-vertical-street.mp4",
-      "meta": "Rainbow beam locked to your x-position, behind you."
-    },
-    {
-      "id": "big-word-graffiti",
-      "label": "Big Word Behind",
-      "media": "clips/comps/big-word-graffiti.mp4",
-      "meta": "Giant 'all works out' behind your head, tracks your position."
-    },
-    {
-      "id": "word-stack-squares",
-      "label": "Word Stack Wall",
-      "media": "clips/comps/word-stack-squares.mp4",
-      "meta": "'works' stacked full-height in cycling rainbow behind you."
-    },
-    {
-      "id": "negative-fill-street",
-      "label": "Negative Space Fill",
-      "media": "clips/comps/negative-fill-street.mp4",
-      "meta": "Detects which side you're on, floods the empty side with solid Fadi color."
-    },
-    {
-      "id": "split-invert-squares",
-      "label": "Split Invert",
-      "media": "clips/comps/split-invert-squares.mp4",
-      "meta": "Frame splits at your centerline; the far side inverts."
-    },
-    {
-      "id": "echo-row-squares",
-      "label": "Echo Row \u2014 Squares",
-      "media": "clips/comps/echo-row-squares.mp4",
-      "meta": "Time-delayed silhouettes of you marching outward in Fadi colors."
-    },
-    {
-      "id": "echo-row-graffiti",
-      "label": "Echo Row \u2014 Graffiti",
-      "media": "clips/comps/echo-row-graffiti.mp4",
-      "meta": "Same trails on the graffiti wall footage."
-    },
-    {
-      "id": "halo-rings-street",
-      "label": "Halo Rings",
-      "media": "clips/comps/halo-rings-street.mp4",
-      "meta": "Concentric Fadi rings emanate from your centroid."
-    },
-    {
-      "id": "frame-inset-street",
-      "label": "Frame Inset PiP",
-      "media": "clips/comps/frame-inset-street.mp4",
-      "meta": "Stage dims, a zoomed crop of you PiPs into the negative space."
-    },
-    {
-      "id": "cutout-shadow-graffiti",
-      "label": "Cutout Shadow \u2014 Graffiti",
-      "media": "clips/comps/cutout-shadow-graffiti.mp4",
-      "meta": "Bg goes black; you're cut out over time-delayed color shadow silhouettes."
-    },
-    {
-      "id": "cutout-shadow-squares",
-      "label": "Cutout Shadow \u2014 Squares",
-      "media": "clips/comps/cutout-shadow-squares.mp4",
-      "meta": "Same on the tunnel (you're small \u2014 shadows get tiny; judging scale limits)."
-    },
-    {
-      "id": "mondrian-squares",
-      "label": "Mondrian Panels",
-      "media": "clips/comps/mondrian-squares.mp4",
-      "meta": "Fadi panels partitioned around your bbox, reshuffling every 2 beats."
-    },
-    {
-      "id": "ground-reflection-street",
-      "label": "Ground Reflection",
-      "media": "clips/comps/ground-reflection-street.mp4",
-      "meta": "White line at your feet + Fadi mirror silhouette below."
-    },
-    {
-      "id": "band-rainbow-street",
-      "label": "Band Behind \u2014 Street",
-      "media": "clips/comps/band-rainbow-street.mp4",
-      "meta": "The rainbow band on the night street footage."
-    }
-  ]
+ "title": "Position Comps \u00b7 v2",
+ "items": [
+  {
+   "id": "mood-grid-reveal",
+   "label": "Mood Grid Reveal",
+   "media": "clips/comps/mood-grid-reveal.mp4",
+   "meta": "v2: ONE big moodboard (webcore, zoomed + slowly panning) behind a grid of squares w/ thin white lines \u2014 cells you occupy punch through to footage."
+  },
+  {
+   "id": "fadi-grid",
+   "label": "Fadi Grid",
+   "media": "clips/comps/fadi-grid.mp4",
+   "meta": "Every square strobes its own random Fadi color (re-rolls every 3 frames); cells you occupy punch through to footage. (your idea #2)"
+  },
+  {
+   "id": "silhouette-window",
+   "label": "Silhouette Window",
+   "media": "clips/comps/silhouette-window.mp4",
+   "meta": "Inverse grid-reveal: the moodboard shows through YOUR silhouette only \u2014 you're a walking window, white contour edge."
+  },
+  {
+   "id": "spotlight",
+   "label": "Spotlight",
+   "media": "clips/comps/spotlight.mp4",
+   "meta": "World drops dark, soft elliptical pool of light around you, faint Fadi tint."
+  },
+  {
+   "id": "frame-trails",
+   "label": "Frame Trails",
+   "media": "clips/comps/frame-trails.mp4",
+   "meta": "Rectangles of where you WERE \u2014 past bounding boxes trail you in cycling colors."
+  },
+  {
+   "id": "pixel-me",
+   "label": "Pixel Me",
+   "media": "clips/comps/pixel-me.mp4",
+   "meta": "You get mosaiced into chunky pixels; the world stays sharp."
+  },
+  {
+   "id": "duotone-split",
+   "label": "Duotone Split",
+   "media": "clips/comps/duotone-split.mp4",
+   "meta": "Bg becomes a two-color Fadi duotone split at your centerline; you stay full color."
+  },
+  {
+   "id": "glitch-column",
+   "label": "Glitch Column",
+   "media": "clips/comps/glitch-column.mp4",
+   "meta": "The column of pixels under you smears across the whole frame \u2014 you stand on your own streak."
+  },
+  {
+   "id": "type-orbit",
+   "label": "Type Orbit",
+   "media": "clips/comps/type-orbit.mp4",
+   "meta": "'all works out' orbiting your body on an ellipse, behind you."
+  },
+  {
+   "id": "venetian-mood",
+   "label": "Venetian Blinds",
+   "media": "clips/comps/venetian-mood.mp4",
+   "meta": "Scrolling horizontal blinds alternate footage / moodboard; you punch through everything."
+  },
+  {
+   "id": "band-rainbow-graffiti",
+   "label": "Band Behind \u2014 Rainbow",
+   "media": "clips/comps/band-rainbow-graffiti.mp4",
+   "meta": "Thick 7-color Fadi band through your torso, behind you. Stripes march on beats."
+  },
+  {
+   "id": "band-solid-squares",
+   "label": "Band Behind \u2014 Solid",
+   "media": "clips/comps/band-solid-squares.mp4",
+   "meta": "Same band, single Fadi color riding the global color cycle."
+  },
+  {
+   "id": "beam-vertical-street",
+   "label": "Vertical Beam",
+   "media": "clips/comps/beam-vertical-street.mp4",
+   "meta": "Rainbow beam locked to your x-position, behind you."
+  },
+  {
+   "id": "big-word-graffiti",
+   "label": "Big Word Behind",
+   "media": "clips/comps/big-word-graffiti.mp4",
+   "meta": "Giant 'all works out' behind your head, tracks your position."
+  },
+  {
+   "id": "word-stack-squares",
+   "label": "Word Stack Wall",
+   "media": "clips/comps/word-stack-squares.mp4",
+   "meta": "'works' stacked full-height in cycling rainbow behind you."
+  },
+  {
+   "id": "negative-fill-street",
+   "label": "Negative Space Fill",
+   "media": "clips/comps/negative-fill-street.mp4",
+   "meta": "Detects which side you're on, floods the empty side with solid Fadi color."
+  },
+  {
+   "id": "split-invert-squares",
+   "label": "Split Invert",
+   "media": "clips/comps/split-invert-squares.mp4",
+   "meta": "Frame splits at your centerline; the far side inverts."
+  },
+  {
+   "id": "echo-row-squares",
+   "label": "Echo Row \u2014 Squares",
+   "media": "clips/comps/echo-row-squares.mp4",
+   "meta": "Time-delayed silhouettes of you marching outward in Fadi colors."
+  },
+  {
+   "id": "echo-row-graffiti",
+   "label": "Echo Row \u2014 Graffiti",
+   "media": "clips/comps/echo-row-graffiti.mp4",
+   "meta": "Same trails on the graffiti wall footage."
+  },
+  {
+   "id": "halo-rings-street",
+   "label": "Halo Rings",
+   "media": "clips/comps/halo-rings-street.mp4",
+   "meta": "Concentric Fadi rings emanate from your centroid."
+  },
+  {
+   "id": "frame-inset-street",
+   "label": "Frame Inset PiP",
+   "media": "clips/comps/frame-inset-street.mp4",
+   "meta": "Stage dims, a zoomed crop of you PiPs into the negative space."
+  },
+  {
+   "id": "cutout-shadow-graffiti",
+   "label": "Cutout Shadow \u2014 Graffiti",
+   "media": "clips/comps/cutout-shadow-graffiti.mp4",
+   "meta": "Bg goes black; you're cut out over time-delayed color shadow silhouettes."
+  },
+  {
+   "id": "cutout-shadow-squares",
+   "label": "Cutout Shadow \u2014 Squares",
+   "media": "clips/comps/cutout-shadow-squares.mp4",
+   "meta": "Same on the tunnel (you're small \u2014 shadows get tiny; judging scale limits)."
+  },
+  {
+   "id": "mondrian-squares",
+   "label": "Mondrian Panels",
+   "media": "clips/comps/mondrian-squares.mp4",
+   "meta": "Fadi panels partitioned around your bbox, reshuffling every 2 beats."
+  },
+  {
+   "id": "ground-reflection-street",
+   "label": "Ground Reflection",
+   "media": "clips/comps/ground-reflection-street.mp4",
+   "meta": "White line at your feet + Fadi mirror silhouette below."
+  },
+  {
+   "id": "band-rainbow-street",
+   "label": "Band Behind \u2014 Street",
+   "media": "clips/comps/band-rainbow-street.mp4",
+   "meta": "The rainbow band on the night street footage."
+  }
+ ]
 }
