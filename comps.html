@@ -4,227 +4,492 @@
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"
     />
-    <title>Position Comps · swipe</title>
+    <meta name="theme-color" content="#0b0b0d" />
+    <title>position comps · swipe</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='4' fill='%23ff0060'/%3E%3C/svg%3E"
+    />
     <style>
       :root {
         --pink: #ff0060;
+        --orange: #ffa405;
+        --yellow: #ffe400;
         --green: #11ff05;
         --cyan: #05d3ff;
-        --yellow: #ffe400;
+        --purple: #6f05ff;
+        --magenta: #f605ff;
+        --bg: #0b0b0d;
+        --card: #131316;
+        --line: #232329;
+        --dim: #8b8b95;
+        --curve: cubic-bezier(0.765, 0, 0.106, 1); /* adam's curve */
+        --spring: cubic-bezier(0.2, 1.45, 0.3, 1);
       }
       * {
         box-sizing: border-box;
         margin: 0;
         -webkit-tap-highlight-color: transparent;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+      html,
+      body {
+        height: 100%;
+        overscroll-behavior: none;
       }
       body {
-        background: #0b0b0d;
-        color: #eee;
+        background: var(--bg);
+        color: #ececf1;
+        overflow: hidden;
         font:
-          16px/1.4 -apple-system,
+          15px/1.45 "Helvetica Neue",
+          -apple-system,
           Helvetica,
           sans-serif;
-        min-height: 100dvh;
         display: flex;
         flex-direction: column;
-        overflow: hidden;
+        letter-spacing: -0.01em;
       }
-      header {
-        padding: 14px 16px 8px;
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-      }
-      header h1 {
-        font-size: 17px;
-        letter-spacing: -0.02em;
-      }
-      header a {
-        color: #888;
-        font-size: 13px;
-        text-decoration: none;
-      }
-      #prog {
-        color: var(--cyan);
-        font-size: 13px;
-        font-variant-numeric: tabular-nums;
-      }
-      #stage {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 8px 14px;
+
+      #bar {
+        height: 3px;
+        background: #1a1a1f;
         position: relative;
       }
+      kbd {
+        background: #1e1e24;
+        border: 1px solid #333;
+        border-radius: 5px;
+        padding: 1px 6px;
+        font: 11px inherit;
+        color: #ccc;
+      }
+      #barfill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(
+          90deg,
+          var(--pink),
+          var(--orange),
+          var(--yellow),
+          var(--green),
+          var(--cyan),
+          var(--purple),
+          var(--magenta)
+        );
+        transition: width 0.5s var(--curve);
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 16px 6px;
+      }
+      header h1 {
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+      }
+      #prog {
+        color: var(--dim);
+        font-size: 12px;
+        font-variant-numeric: tabular-nums;
+      }
+      header .hbtns {
+        display: flex;
+        gap: 8px;
+      }
+      header button,
+      header a {
+        background: none;
+        border: 1px solid var(--line);
+        color: var(--dim);
+        border-radius: 99px;
+        padding: 5px 12px;
+        font-size: 12px;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          transform 0.15s var(--spring),
+          color 0.15s;
+      }
+      header button:active {
+        transform: scale(0.92);
+        color: #fff;
+      }
+
+      #stage {
+        flex: 1;
+        position: relative;
+        margin: 10px 14px 4px;
+      }
       .card {
+        position: absolute;
+        inset: 0;
+        margin: auto;
         width: 100%;
         max-width: 560px;
-        background: #141417;
-        border-radius: 16px;
+        max-height: 100%;
+        height: fit-content;
+        background: var(--card);
+        border-radius: 20px;
         overflow: hidden;
-        box-shadow: 0 8px 40px #000a;
+        border: 1px solid var(--line);
+        box-shadow: 0 18px 60px #000c;
+        touch-action: none;
+        will-change: transform;
+      }
+      .card.under {
+        transform: scale(0.94) translateY(14px);
+        opacity: 0.55;
+        pointer-events: none;
         transition:
-          transform 0.18s,
-          opacity 0.18s;
-        touch-action: pan-y;
+          transform 0.45s var(--curve),
+          opacity 0.45s;
       }
-      .card.fly-l {
-        transform: translateX(-120vw) rotate(-14deg);
-        opacity: 0;
-      }
-      .card.fly-r {
-        transform: translateX(120vw) rotate(14deg);
-        opacity: 0;
+      .card.under.rise {
+        transform: scale(1) translateY(0);
+        opacity: 1;
       }
       .card video {
         width: 100%;
         aspect-ratio: 16/9;
         display: block;
         background: #000;
+        pointer-events: none;
       }
       .card .body {
-        padding: 12px 14px 14px;
+        padding: 13px 16px 16px;
       }
       .card h2 {
         font-size: 16px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
         margin-bottom: 4px;
+        text-transform: lowercase;
       }
       .card p {
-        color: #9a9aa2;
+        color: var(--dim);
         font-size: 13px;
-        min-height: 36px;
+        min-height: 38px;
       }
-      .card textarea {
-        width: 100%;
-        margin-top: 10px;
-        background: #0b0b0d;
-        color: #eee;
-        border: 1px solid #26262c;
-        border-radius: 9px;
-        padding: 9px 10px;
-        font: 14px inherit;
-        resize: none;
-        height: 56px;
+
+      .stamp {
+        position: absolute;
+        top: 18px;
+        font-size: 26px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        padding: 6px 14px;
+        border: 3px solid;
+        border-radius: 10px;
+        opacity: 0;
+        transform: rotate(-12deg);
+        pointer-events: none;
+        text-transform: uppercase;
       }
+      .stamp.love {
+        left: 16px;
+        color: var(--green);
+        border-color: var(--green);
+      }
+      .stamp.nope {
+        right: 16px;
+        color: var(--pink);
+        border-color: var(--pink);
+        transform: rotate(12deg);
+      }
+      .stamp.flag {
+        left: 50%;
+        top: auto;
+        bottom: 18px;
+        transform: translateX(-50%) rotate(0deg);
+        color: var(--cyan);
+        border-color: var(--cyan);
+        font-size: 20px;
+      }
+
+      #hint {
+        text-align: center;
+        color: #55555e;
+        font-size: 11.5px;
+        padding: 2px 0 4px;
+      }
+      #hint b {
+        color: #77777f;
+        font-weight: 600;
+      }
+
       #btns {
         display: flex;
-        gap: 14px;
+        gap: 16px;
         justify-content: center;
-        padding: 10px 0 max(18px, env(safe-area-inset-bottom));
+        align-items: center;
+        padding: 8px 0 max(20px, env(safe-area-inset-bottom));
       }
       #btns button {
-        width: 64px;
-        height: 64px;
-        border-radius: 50%;
         border: none;
-        font-size: 26px;
+        border-radius: 50%;
         cursor: pointer;
-        background: #1b1b20;
-        color: #fff;
+        background: var(--card);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s var(--spring);
+        box-shadow: 0 4px 18px #0009;
       }
-      #nope {
-        color: var(--pink) !important;
-        border: 2px solid var(--pink) !important;
+      #btns button:active {
+        transform: scale(0.85);
       }
-      #meh {
-        color: var(--yellow) !important;
-        border: 2px solid #444 !important;
-        width: 52px !important;
-        height: 52px !important;
-        align-self: center;
+      #bNope {
+        width: 62px;
+        height: 62px;
+        font-size: 24px;
+        color: var(--pink);
+        border: 2px solid var(--pink);
       }
-      #love {
-        color: var(--green) !important;
-        border: 2px solid var(--green) !important;
+      #bUndo {
+        width: 46px;
+        height: 46px;
+        font-size: 16px;
+        color: var(--yellow);
+        border: 1px solid #3a3a42;
       }
+      #bFlag {
+        width: 46px;
+        height: 46px;
+        font-size: 17px;
+        color: var(--cyan);
+        border: 1px solid var(--cyan);
+      }
+      #bLove {
+        width: 62px;
+        height: 62px;
+        font-size: 24px;
+        color: var(--green);
+        border: 2px solid var(--green);
+      }
+
+      /* ------- summary ------- */
       #done {
         display: none;
         flex: 1;
-        padding: 20px 18px;
         overflow: auto;
+        padding: 8px 18px 40px;
       }
       #done h2 {
-        margin-bottom: 12px;
+        font-size: 20px;
+        letter-spacing: -0.03em;
+        margin: 14px 0 4px;
+        text-transform: lowercase;
       }
-      #done ul {
-        list-style: none;
-        margin-bottom: 16px;
+      #done .sub {
+        color: var(--dim);
+        font-size: 13px;
+        margin-bottom: 18px;
       }
-      #done li {
-        padding: 6px 0;
-        border-bottom: 1px solid #1c1c22;
-        font-size: 14px;
+      .group {
+        margin-bottom: 22px;
       }
-      .tag-love {
+      .group h3 {
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--dim);
+        margin-bottom: 8px;
+      }
+      .group h3.love {
         color: var(--green);
       }
-      .tag-nope {
+      .group h3.flag {
+        color: var(--cyan);
+      }
+      .group h3.nope {
         color: var(--pink);
       }
-      .tag-meh {
-        color: var(--yellow);
+      .item {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 10px 12px;
+        margin-bottom: 8px;
+      }
+      .item .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+      }
+      .item .name {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .item video {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 8px;
+        aspect-ratio: 16/9;
+        background: #000;
+      }
+      .item textarea {
+        width: 100%;
+        margin-top: 8px;
+        background: #0b0b0d;
+        color: #eee;
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        padding: 9px 10px;
+        font: 13px inherit;
+        resize: none;
+        min-height: 52px;
+      }
+      .item .re {
+        background: none;
+        border: none;
+        color: var(--dim);
+        font-size: 12px;
+        cursor: pointer;
+        padding: 4px;
       }
       #copy {
+        position: sticky;
+        bottom: 12px;
+        display: block;
+        width: 100%;
         background: var(--green);
         color: #000;
         border: none;
-        border-radius: 12px;
-        padding: 14px 20px;
-        font-weight: 700;
+        border-radius: 14px;
+        padding: 15px;
+        font-weight: 800;
         font-size: 15px;
-        width: 100%;
+        cursor: pointer;
+        transition: transform 0.2s var(--spring);
+        box-shadow: 0 6px 24px #000c;
+      }
+      #copy:active {
+        transform: scale(0.97);
       }
       #reset {
         background: none;
         border: none;
-        color: #666;
-        margin-top: 14px;
-        width: 100%;
-        font-size: 13px;
+        color: #55555e;
+        margin: 14px auto 0;
+        display: block;
+        font-size: 12px;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
+    <div id="bar"><div id="barfill"></div></div>
     <header>
       <h1>position comps</h1>
-      <span id="prog"></span
-      ><button
-        id="undo"
-        title="undo last swipe"
+      <span id="prog"></span>
+      <div class="hbtns">
+        <button id="undo" title="undo last swipe (⌘Z)">↩ back</button
+        ><button id="keys" title="shortcuts (?)">?</button
+        ><a href="index.html">lab</a>
+      </div>
+    </header>
+    <div
+      id="cheat"
+      style="
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        background: #000c;
+        backdrop-filter: blur(6px);
+      "
+    >
+      <div
         style="
-          background: #1b1b20;
-          color: #ffe400;
-          border: 1px solid #444;
-          border-radius: 8px;
-          padding: 6px 12px;
-          font-size: 14px;
+          max-width: 340px;
+          margin: 18vh auto 0;
+          background: var(--card);
+          border: 1px solid var(--line);
+          border-radius: 16px;
+          padding: 18px 20px;
         "
       >
-        ↩ back
-      </button>
-      <a href="index.html">← lab</a>
-    </header>
-    <div id="stage"></div>
-    <div id="btns">
-      <button id="nope">✕</button><button id="meh">~</button
-      ><button id="love">❤</button>
+        <h2 style="font-size: 15px; margin-bottom: 12px">shortcuts</h2>
+        <table
+          style="
+            width: 100%;
+            font-size: 13px;
+            color: var(--dim);
+            border-spacing: 0 7px;
+          "
+        >
+          <tr>
+            <td><kbd>→</kbd> / swipe right</td>
+            <td>love</td>
+          </tr>
+          <tr>
+            <td><kbd>←</kbd> / swipe left</td>
+            <td>nope</td>
+          </tr>
+          <tr>
+            <td><kbd>↓</kbd> / swipe down</td>
+            <td>flag — notes later</td>
+          </tr>
+          <tr>
+            <td><kbd>⌘Z</kbd> <kbd>u</kbd> <kbd>⌫</kbd></td>
+            <td>undo</td>
+          </tr>
+          <tr>
+            <td><kbd>?</kbd></td>
+            <td>this sheet</td>
+          </tr>
+          <tr>
+            <td><kbd>esc</kbd></td>
+            <td>close</td>
+          </tr>
+        </table>
+      </div>
     </div>
-    <section id="done">
-      <h2>done — feedback</h2>
-      <ul id="summary"></ul>
-      <button id="copy">copy feedback for claude</button>
-      <button id="reset">start over</button>
-    </section>
+    <div id="stage"></div>
+    <div id="hint">
+      <b>→</b> love &nbsp;·&nbsp; <b>←</b> nope &nbsp;·&nbsp; <b>↓</b> good,
+      notes later
+    </div>
+    <div id="btns">
+      <button id="bNope" title="nope (←)">✕</button>
+      <button id="bUndo" title="undo (⌘Z)">↩</button>
+      <button id="bFlag" title="good — notes later (↓)">▾</button>
+      <button id="bLove" title="love (→)">❤</button>
+    </div>
+    <section id="done"></section>
+
     <script>
-      const KEY = "fadi-comps-feedback-v1";
+      const KEY = "fadi-comps-feedback-v2";
+      const OLD = JSON.parse(
+        localStorage.getItem("fadi-comps-feedback-v1") || "{}",
+      );
       let items = [],
         idx = 0,
-        fb = JSON.parse(localStorage.getItem(KEY) || "{}");
+        fb = JSON.parse(localStorage.getItem(KEY) || "null") || migrate();
+
+      function migrate() {
+        // carry v1 votes forward (love/nope/meh -> flag)
+        const m = {};
+        for (const [id, f] of Object.entries(OLD))
+          m[id] = { v: f.v === "meh" ? "flag" : f.v, note: f.note || "" };
+        return m;
+      }
+      function save() {
+        localStorage.setItem(KEY, JSON.stringify(fb));
+      }
+
       const stage = document.getElementById("stage"),
-        prog = document.getElementById("prog");
+        prog = document.getElementById("prog"),
+        bar = document.getElementById("barfill"),
+        done = document.getElementById("done");
 
       function el(tag, cls, text) {
         const e = document.createElement(tag);
@@ -233,7 +498,7 @@
         return e;
       }
 
-      fetch("comps-catalog.json")
+      fetch("comps-catalog.json?v=" + Date.now())
         .then((r) => r.json())
         .then((c) => {
           items = c.items;
@@ -242,120 +507,257 @@
           render();
         });
 
-      function render() {
-        stage.replaceChildren();
-        if (idx >= items.length) {
-          return finish();
-        }
-        document.getElementById("btns").style.display = "flex";
-        document.getElementById("done").style.display = "none";
-        const it = items[idx];
-        prog.textContent = idx + 1 + " / " + items.length;
+      function makeCard(it) {
         const card = el("div", "card");
         const v = el("video");
         v.src = it.media;
         v.autoplay = v.loop = v.muted = true;
         v.playsInline = true;
         v.setAttribute("playsinline", "");
+        v.preload = "auto";
         const body = el("div", "body");
         body.append(el("h2", null, it.label), el("p", null, it.meta));
-        const ta = el("textarea");
-        ta.placeholder = "notes (optional) — sizing, color, timing…";
-        body.append(ta);
-        card.append(v, body);
-        stage.append(card);
-        let x0 = null;
-        card.addEventListener(
-          "touchstart",
-          (e) => {
-            x0 = e.touches[0].clientX;
-          },
-          { passive: true },
+        card.append(
+          v,
+          body,
+          el("div", "stamp love", "love"),
+          el("div", "stamp nope", "nope"),
+          el("div", "stamp flag", "notes later"),
         );
-        card.addEventListener(
-          "touchend",
-          (e) => {
-            if (x0 === null) return;
-            const dx = e.changedTouches[0].clientX - x0;
-            x0 = null;
-            if (dx > 70) vote("love");
-            else if (dx < -70) vote("nope");
-          },
-          { passive: true },
-        );
+        return card;
       }
-      function vote(v) {
-        const it = items[idx],
-          card = stage.querySelector(".card");
-        const note = card ? card.querySelector("textarea").value.trim() : "";
-        fb[it.id] = { v, note };
-        localStorage.setItem(KEY, JSON.stringify(fb));
-        if (card) {
-          card.classList.add(v === "nope" ? "fly-l" : "fly-r");
+
+      function render() {
+        stage.replaceChildren();
+        const total = items.length;
+        bar.style.width = (100 * Math.min(idx, total)) / total + "%";
+        if (idx >= total) return finish();
+        document.getElementById("btns").style.display = "flex";
+        document.getElementById("hint").style.display = "block";
+        done.style.display = "none";
+        prog.textContent = idx + 1 + " / " + total;
+
+        if (items[idx + 1]) {
+          // under-card peek
+          const under = makeCard(items[idx + 1]);
+          under.classList.add("under");
+          stage.append(under);
         }
+        const card = makeCard(items[idx]);
+        stage.append(card);
+        attachDrag(card);
+      }
+
+      /* ---------------- drag physics ---------------- */
+      function attachDrag(card) {
+        let x0 = 0,
+          y0 = 0,
+          dx = 0,
+          dy = 0,
+          dragging = false,
+          t0 = 0;
+        const stamps = {
+          love: card.querySelector(".stamp.love"),
+          nope: card.querySelector(".stamp.nope"),
+          flag: card.querySelector(".stamp.flag"),
+        };
+        const down = (e) => {
+          dragging = true;
+          t0 = performance.now();
+          x0 = e.clientX;
+          y0 = e.clientY;
+          card.style.transition = "none";
+          card.setPointerCapture && card.setPointerCapture(e.pointerId);
+        };
+        const move = (e) => {
+          if (!dragging) return;
+          dx = e.clientX - x0;
+          dy = e.clientY - y0;
+          card.style.transform = `translate(${dx}px, ${dy * 0.6}px) rotate(${dx * 0.045}deg)`;
+          stamps.love.style.opacity = Math.min(1, Math.max(0, dx - 24) / 90);
+          stamps.nope.style.opacity = Math.min(1, Math.max(0, -dx - 24) / 90);
+          stamps.flag.style.opacity =
+            Math.min(1, Math.max(0, dy - 30) / 90) *
+            (Math.abs(dx) < 70 ? 1 : 0);
+        };
+        const up = (e) => {
+          if (!dragging) return;
+          dragging = false;
+          const vel = Math.abs(dx) / Math.max(1, performance.now() - t0);
+          const flingX = Math.abs(dx) > 100 || (Math.abs(dx) > 40 && vel > 0.5);
+          const flingY = dy > 90 && Math.abs(dx) < 70;
+          if (flingY) fly(card, "flag");
+          else if (flingX) fly(card, dx > 0 ? "love" : "nope");
+          else {
+            // spring back
+            card.style.transition = "transform .5s var(--spring)";
+            card.style.transform = "";
+            Object.values(stamps).forEach((s) => (s.style.opacity = 0));
+          }
+        };
+        card.addEventListener("pointerdown", down);
+        card.addEventListener("pointermove", move);
+        card.addEventListener("pointerup", up);
+        card.addEventListener("pointercancel", up);
+      }
+
+      function fly(card, v) {
+        const it = items[idx];
+        fb[it.id] = { v, note: (fb[it.id] && fb[it.id].note) || "" };
+        save();
+        if (navigator.vibrate) navigator.vibrate(v === "nope" ? 18 : 10);
+        card.style.transition = "transform .45s var(--curve), opacity .4s";
+        card.style.transform =
+          v === "flag"
+            ? "translateY(120vh) rotate(4deg)"
+            : v === "love"
+              ? "translate(120vw, -8vh) rotate(16deg)"
+              : "translate(-120vw, -8vh) rotate(-16deg)";
+        card.style.opacity = "0";
+        const under = stage.querySelector(".card.under");
+        if (under) under.classList.add("rise");
         setTimeout(() => {
           idx++;
           render();
-        }, 180);
+        }, 240);
       }
-      document.getElementById("love").onclick = () => vote("love");
-      document.getElementById("nope").onclick = () => vote("nope");
-      document.getElementById("meh").onclick = () => vote("meh");
-      document.getElementById("undo").onclick = () => {
+
+      function voteBtn(v) {
+        const card = stage.querySelector(".card:not(.under)");
+        if (card) fly(card, v);
+      }
+      document.getElementById("bLove").onclick = () => voteBtn("love");
+      document.getElementById("bNope").onclick = () => voteBtn("nope");
+      document.getElementById("bFlag").onclick = () => voteBtn("flag");
+      document.getElementById("bUndo").onclick = undo;
+      document.getElementById("undo").onclick = undo;
+      function undo() {
         if (idx <= 0) return;
         idx--;
         delete fb[items[idx].id];
-        localStorage.setItem(KEY, JSON.stringify(fb));
+        save();
         render();
-      };
+      }
+      const cheat = document.getElementById("cheat");
+      const cheatToggle = (show) =>
+        (cheat.style.display = show ? "block" : "none");
+      cheat.onclick = () => cheatToggle(false);
+      document.getElementById("keys").onclick = () => cheatToggle(true);
+      addEventListener("keydown", (e) => {
+        const t = e.target;
+        if (t && (t.tagName === "TEXTAREA" || t.tagName === "INPUT")) return;
+        if (e.key === "Escape") return cheatToggle(false);
+        if (e.key === "?") return cheatToggle(cheat.style.display === "none");
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "z") {
+          e.preventDefault();
+          return undo();
+        }
+        if (e.key === "ArrowRight") voteBtn("love");
+        if (e.key === "ArrowLeft") voteBtn("nope");
+        if (e.key === "ArrowDown") voteBtn("flag");
+        if (e.key === "u" || e.key === "Backspace") undo();
+      });
 
+      /* ---------------- summary ---------------- */
       function finish() {
         document.getElementById("btns").style.display = "none";
-        const d = document.getElementById("done");
-        d.style.display = "block";
+        document.getElementById("hint").style.display = "none";
+        stage.style.display = "none";
+        done.style.display = "block";
         prog.textContent = items.length + " / " + items.length;
-        const ul = document.getElementById("summary");
-        ul.replaceChildren();
-        items.forEach((it) => {
-          const f = fb[it.id];
-          if (!f) return;
-          const icon = f.v === "love" ? "❤" : f.v === "nope" ? "✕" : "~";
-          const li = el("li");
-          li.append(
-            el("span", "tag-" + f.v, icon),
-            document.createTextNode(" " + it.label),
-          );
-          if (f.note) {
-            const em = el("em", null, " — " + f.note);
-            li.append(em);
+        done.replaceChildren();
+        done.append(el("h2", null, "done."));
+        const flagged = items.filter(
+          (it) => fb[it.id] && fb[it.id].v === "flag",
+        );
+        done.append(
+          el(
+            "div",
+            "sub",
+            flagged.length
+              ? "add notes to the flagged ones whenever — everything autosaves."
+              : "everything saved. copy it over to claude below.",
+          ),
+        );
+
+        const groups = [
+          ["love", "loved ❤"],
+          ["flag", "flagged — notes ▾"],
+          ["nope", "noped ✕"],
+        ];
+        for (const [key, title] of groups) {
+          const list = items.filter((it) => fb[it.id] && fb[it.id].v === key);
+          if (!list.length) continue;
+          const g = el("div", "group");
+          g.append(el("h3", key, title + " · " + list.length));
+          for (const it of list) {
+            const item = el("div", "item");
+            const row = el("div", "row");
+            row.append(el("span", "name", it.label));
+            const re = el("button", "re", "re-vote");
+            re.onclick = () => {
+              delete fb[it.id];
+              save();
+              idx = items.findIndex((x) => x.id === it.id);
+              stage.style.display = "";
+              render();
+            };
+            row.append(re);
+            item.append(row);
+            if (key === "flag") {
+              const vid = el("video");
+              vid.src = it.media;
+              vid.loop = vid.muted = true;
+              vid.playsInline = true;
+              vid.setAttribute("playsinline", "");
+              vid.preload = "metadata";
+              vid.onclick = () => (vid.paused ? vid.play() : vid.pause());
+              item.append(vid);
+              const ta = el("textarea");
+              ta.placeholder =
+                "what should change — sizing, color, timing, feel…";
+              ta.value = fb[it.id].note || "";
+              ta.oninput = () => {
+                fb[it.id].note = ta.value;
+                save();
+              };
+              item.append(ta);
+            }
+            g.append(item);
           }
-          ul.append(li);
-        });
-      }
-      document.getElementById("copy").onclick = async () => {
-        const out = {
-          when: new Date().toISOString(),
-          deck: "position-comps-v1",
-          feedback: items.map((it) => ({
-            id: it.id,
-            ...(fb[it.id] || { v: "skipped" }),
-          })),
-        };
-        const txt = "FADI COMP FEEDBACK\n" + JSON.stringify(out, null, 1);
-        try {
-          await navigator.clipboard.writeText(txt);
-          document.getElementById("copy").textContent =
-            "copied — paste it to claude";
-        } catch (e) {
-          prompt("copy this:", txt);
+          done.append(g);
         }
-      };
-      document.getElementById("reset").onclick = () => {
-        localStorage.removeItem(KEY);
-        fb = {};
-        idx = 0;
-        render();
-      };
+        const copy = el("button", null, "copy feedback for claude");
+        copy.id = "copy";
+        copy.onclick = async () => {
+          const out = {
+            when: new Date().toISOString(),
+            deck: "position-comps-v2",
+            feedback: items.map((it) => ({
+              id: it.id,
+              ...(fb[it.id] || { v: "skipped" }),
+            })),
+          };
+          const txt = "FADI COMP FEEDBACK\n" + JSON.stringify(out, null, 1);
+          try {
+            await navigator.clipboard.writeText(txt);
+            copy.textContent = "copied — paste it to claude";
+          } catch (e) {
+            prompt("copy this:", txt);
+          }
+        };
+        done.append(copy);
+        const reset = el("button", null, "start over");
+        reset.id = "reset";
+        reset.onclick = () => {
+          fb = {};
+          save();
+          idx = 0;
+          stage.style.display = "";
+          render();
+        };
+        done.append(reset);
+      }
     </script>
   </body>
 </html>
