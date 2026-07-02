@@ -290,6 +290,91 @@
         border: 2px solid var(--green);
       }
 
+      /* ------- params panel ------- */
+      #panel {
+        position: fixed;
+        z-index: 40;
+        background: #101013;
+        border: 1px solid var(--line);
+        overflow-y: auto;
+        transition: transform 0.4s var(--curve);
+        padding: 16px 16px 22px;
+      }
+      @media (min-width: 1100px) {
+        #panel {
+          top: 60px;
+          right: 14px;
+          bottom: 14px;
+          width: 280px;
+          border-radius: 16px;
+          transform: translateX(120%);
+        }
+        body.panel-open #panel { transform: translateX(0); }
+      }
+      @media (max-width: 1099px) {
+        #panel {
+          left: 0; right: 0; bottom: 0;
+          max-height: 55dvh;
+          border-radius: 18px 18px 0 0;
+          transform: translateY(110%);
+          padding-bottom: max(22px, env(safe-area-inset-bottom));
+        }
+        body.panel-open #panel { transform: translateY(0); }
+      }
+      #panel h3 {
+        font-size: 13px;
+        text-transform: lowercase;
+        letter-spacing: -0.02em;
+        margin-bottom: 2px;
+      }
+      #panel .livebadge {
+        font-size: 10.5px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      #panel .livebadge.on { color: var(--green); }
+      #panel .livebadge.off { color: var(--dim); }
+      #panel .ctl { margin-bottom: 13px; }
+      #panel .ctl label {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        color: var(--dim);
+        margin-bottom: 5px;
+      }
+      #panel .ctl label b { color: #ddd; font-weight: 600; }
+      #panel input[type="range"] { width: 100%; accent-color: var(--cyan); }
+      #panel select, #panel input[type="text"] {
+        width: 100%;
+        background: #0b0b0d;
+        color: #eee;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 7px 9px;
+        font: 13px inherit;
+      }
+      #panel .tgl {
+        width: 44px; height: 26px; border-radius: 99px;
+        background: #26262c; border: none; position: relative; cursor: pointer;
+        transition: background 0.2s;
+      }
+      #panel .tgl.on { background: var(--green); }
+      #panel .tgl::after {
+        content: ""; position: absolute; top: 3px; left: 3px;
+        width: 20px; height: 20px; border-radius: 50%; background: #fff;
+        transition: transform 0.2s var(--spring);
+      }
+      #panel .tgl.on::after { transform: translateX(18px); }
+      #panel .pstatus { font-size: 11.5px; color: var(--dim); min-height: 16px; margin: 4px 0 8px; }
+      #panel .pstatus.err { color: var(--pink); }
+      #panel .prow { display: flex; gap: 8px; margin-top: 10px; }
+      #panel .prow button {
+        flex: 1; background: #1b1b20; color: #ccc; border: 1px solid var(--line);
+        border-radius: 9px; padding: 9px; font-size: 12.5px; cursor: pointer;
+      }
+      #panel .noknobs { color: var(--dim); font-size: 12.5px; line-height: 1.5; }
+
       /* ------- summary ------- */
       #done {
         display: none;
@@ -478,12 +563,36 @@
       <button id="bNope" title="nope (←)">✕</button>
       <button id="bUndo" title="undo (⌘Z)">↩</button>
       <button id="bFlag" title="good — notes later (↓)">▾</button>
+      <button id="bGear" title="params / debug panel (p)" style="width:46px;height:46px;font-size:17px;color:var(--orange);border:1px solid var(--orange);border-radius:50%;background:var(--card);cursor:pointer">⚙</button>
       <button id="bLove" title="love (→)">❤</button>
     </div>
+    <aside id="panel"></aside>
     <section id="done"></section>
 
     <script>
       const KEY = "fadi-comps-feedback-v2";
+      const PKEY = "fadi-comps-params";
+      const pvals = JSON.parse(localStorage.getItem(PKEY) || "{}");
+      let SCHEMAS = {}, LIVE = false, curBase = "fx2";
+      const ID2COMP = {
+        "mood-grid-reveal": "mood_grid", "fadi-grid": "fadi_grid",
+        "silhouette-window": "silhouette_window", "spotlight": "spotlight",
+        "frame-trails": "frame_trails", "pixel-me": "pixel_me",
+        "duotone-split": "duotone_split", "glitch-column": "glitch_column",
+        "type-orbit": "type_orbit", "venetian-mood": "venetian",
+        "band-rainbow-graffiti": "band_behind", "band-rainbow-street": "band_behind",
+        "band-solid-squares": "band_behind", "beam-vertical-street": "beam_vertical",
+        "big-word-graffiti": "big_word_behind", "word-stack-squares": "word_stack_wall",
+        "negative-fill-street": "negative_fill", "split-invert-squares": "split_invert",
+        "echo-row-squares": "echo_row", "echo-row-graffiti": "echo_row",
+        "halo-rings-street": "halo_rings", "frame-inset-street": "frame_inset",
+        "cutout-shadow-graffiti": "cutout_shadow", "cutout-shadow-squares": "cutout_shadow",
+        "mondrian-squares": "mondrian", "ground-reflection-street": "ground_reflection",
+      };
+      const compOf = (id) => ID2COMP[id] || id.replace(/-/g, "_");
+      fetch("params.json").then(r => r.json()).then(s => { SCHEMAS = s; });
+      fetch("/api/ping").then(r => r.json()).then(j => { LIVE = !!j.live; })
+        .catch(() => { LIVE = false; });
       const DKEY = "fadi-comps-drafts";
       const drafts = JSON.parse(localStorage.getItem(DKEY) || "{}");
       const OLD = JSON.parse(
@@ -553,6 +662,103 @@
         return card;
       }
 
+      let pTimer = null;
+      function panelFor(it) {
+        const panel = document.getElementById("panel");
+        panel.replaceChildren();
+        const comp = compOf(it.id);
+        const schema = SCHEMAS[comp];
+        panel.append(el("h3", null, it.label));
+        const badge = el("div", "livebadge " + (LIVE ? "on" : "off"),
+          LIVE ? "● live — changes re-render the preview"
+               : "○ annotate-only — values save with your swipe (run ./server.py for live)");
+        panel.append(badge);
+        const status = el("div", "pstatus", "");
+        const vals = pvals[it.id] = pvals[it.id] || {};
+        const persist = () => localStorage.setItem(PKEY, JSON.stringify(pvals));
+        const rerender = () => {
+          if (!LIVE) return;
+          clearTimeout(pTimer);
+          pTimer = setTimeout(async () => {
+            status.className = "pstatus"; status.textContent = "rendering…";
+            try {
+              const r = await fetch("/api/preview", { method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ comp, sd: vals, base: curBase }) });
+              const j = await r.json();
+              if (j.url) {
+                const vid = stage.querySelector(".card:not(.under) video");
+                if (vid) { vid.src = j.url + "?t=" + Date.now(); vid.play(); }
+                status.textContent = "✓ live";
+              } else { status.className = "pstatus err"; status.textContent = j.error || "render failed"; }
+            } catch (e) { status.className = "pstatus err"; status.textContent = "server unreachable"; }
+          }, 450);
+        };
+        if (LIVE) {
+          const bc = el("div", "ctl");
+          const bl = el("label"); bl.append(el("span", null, "footage"), el("b", null, ""));
+          const sel = el("select");
+          for (const b of (SCHEMAS._bases || [])) {
+            const o = el("option", null, b.label); o.value = b.id; sel.append(o);
+          }
+          sel.value = curBase;
+          sel.onchange = () => { curBase = sel.value; rerender(); };
+          bc.append(bl, sel); panel.append(bc);
+        }
+        if (!schema) {
+          panel.append(el("div", "noknobs",
+            "no exposed knobs for this one yet — type in the note what you'd want tweakable and i'll wire it."));
+          panel.append(status);
+          return;
+        }
+        for (const p of schema) {
+          const ctl = el("div", "ctl");
+          const lab = el("label");
+          const valEl = el("b", null, "");
+          lab.append(el("span", null, p.label), valEl);
+          ctl.append(lab);
+          const cur = vals[p.key] !== undefined ? vals[p.key] : p.default;
+          const show = (v) => valEl.textContent =
+            typeof v === "boolean" ? (v ? "on" : "off") : String(v);
+          show(cur);
+          if (p.type === "range") {
+            const inp = el("input"); inp.type = "range";
+            inp.min = p.min; inp.max = p.max; inp.step = p.step; inp.value = cur;
+            inp.oninput = () => { vals[p.key] = parseFloat(inp.value); show(vals[p.key]); persist(); rerender(); };
+            ctl.append(inp);
+          } else if (p.type === "toggle") {
+            const b = el("button", "tgl" + (cur ? " on" : ""));
+            b.onclick = () => { vals[p.key] = !(vals[p.key] !== undefined ? vals[p.key] : p.default);
+              b.classList.toggle("on", vals[p.key]); show(vals[p.key]); persist(); rerender(); };
+            ctl.append(b);
+          } else if (p.type === "select") {
+            const sel = el("select");
+            for (const o of p.options) { const op = el("option", null, o); op.value = o; sel.append(op); }
+            sel.value = cur;
+            sel.onchange = () => { vals[p.key] = sel.value; show(sel.value); persist(); rerender(); };
+            ctl.append(sel);
+          } else if (p.type === "text") {
+            const inp = el("input"); inp.type = "text"; inp.value = cur;
+            inp.oninput = () => { vals[p.key] = inp.value; persist(); rerender(); };
+            ctl.append(inp);
+          }
+          panel.append(ctl);
+        }
+        panel.append(status);
+        const prow = el("div", "prow");
+        const reset = el("button", null, "reset");
+        reset.onclick = () => { pvals[it.id] = {}; persist(); panelFor(it); rerender(); };
+        prow.append(reset);
+        if (LIVE) {
+          const rr = el("button", null, "re-render");
+          rr.onclick = rerender;
+          prow.append(rr);
+        }
+        panel.append(prow);
+      }
+      document.getElementById("bGear").onclick = () =>
+        document.body.classList.toggle("panel-open");
+
       function render() {
         stage.replaceChildren();
         const total = items.length;
@@ -572,6 +778,7 @@
         const card = makeCard(items[idx]);
         stage.append(card);
         attachDrag(card);
+        panelFor(items[idx]);
       }
 
       /* ---------------- drag physics ---------------- */
@@ -634,6 +841,8 @@
         const note = (lta && lta.value.trim()) || drafts[it.id] ||
                      (fb[it.id] && fb[it.id].note) || "";
         fb[it.id] = { v, note };
+        if (pvals[it.id] && Object.keys(pvals[it.id]).length)
+          fb[it.id].params = pvals[it.id];
         save();
         if (navigator.vibrate) navigator.vibrate(v === "nope" ? 18 : 10);
         card.style.transition = "transform .45s var(--curve), opacity .4s";
@@ -678,6 +887,7 @@
         if (t && (t.tagName === "TEXTAREA" || t.tagName === "INPUT")) return;
         if (e.key === "Escape") return cheatToggle(false);
         if (e.key === "?") return cheatToggle(cheat.style.display === "none");
+        if (e.key === "p") return document.body.classList.toggle("panel-open");
         if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "z") {
           e.preventDefault();
           return undo();

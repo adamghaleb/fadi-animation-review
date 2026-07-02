@@ -1,0 +1,85 @@
+{
+  "_boards": ["webcore", "metro!", "lightland", "new core", "spectral"],
+  "_bases": [
+    { "id": "fx2", "label": "squares tunnel" },
+    { "id": "fx", "label": "graffiti wall" },
+    { "id": "fx3", "label": "night street" }
+  ],
+  "mood_grid": [
+    { "key": "board", "type": "select", "options": ["webcore", "metro!", "lightland", "new core", "spectral"], "default": "webcore", "label": "moodboard" },
+    { "key": "zoom", "type": "range", "min": 1, "max": 4, "step": 0.1, "default": 2.4, "label": "board zoom" },
+    { "key": "cell", "type": "range", "min": 0.06, "max": 0.4, "step": 0.01, "default": 0.16, "label": "grid cell size" },
+    { "key": "occ", "type": "range", "min": 0.005, "max": 0.2, "step": 0.005, "default": 0.03, "label": "reveal sensitivity" },
+    { "key": "speed", "type": "range", "min": 1, "max": 6, "step": 1, "default": 3, "label": "board cycle speed" },
+    { "key": "line", "type": "range", "min": 0, "max": 6, "step": 1, "default": 2, "label": "grid line px" }
+  ],
+  "fadi_grid": [
+    { "key": "cell", "type": "range", "min": 0.06, "max": 0.4, "step": 0.01, "default": 0.125, "label": "grid cell size" },
+    { "key": "occ", "type": "range", "min": 0.005, "max": 0.2, "step": 0.005, "default": 0.03, "label": "reveal sensitivity" },
+    { "key": "alpha", "type": "range", "min": 0.2, "max": 1, "step": 0.05, "default": 1, "label": "color opacity" },
+    { "key": "line", "type": "range", "min": 0, "max": 6, "step": 1, "default": 2, "label": "grid line px" }
+  ],
+  "silhouette_window": [
+    { "key": "board", "type": "select", "options": ["webcore", "metro!", "lightland", "new core", "spectral"], "default": "webcore", "label": "moodboard" },
+    { "key": "zoom", "type": "range", "min": 1, "max": 4, "step": 0.1, "default": 2.4, "label": "board zoom" },
+    { "key": "edge", "type": "toggle", "default": true, "label": "white contour edge" },
+    { "key": "dim", "type": "range", "min": 0.2, "max": 1, "step": 0.05, "default": 1, "label": "world brightness" }
+  ],
+  "band_behind": [
+    { "key": "mode", "type": "select", "options": ["rainbow", "solid"], "default": "rainbow", "label": "band mode" },
+    { "key": "height", "type": "range", "min": 0.06, "max": 0.5, "step": 0.02, "default": 0.2, "label": "band thickness" },
+    { "key": "torso", "type": "range", "min": 0, "max": 1, "step": 0.05, "default": 0.42, "label": "band position on body" }
+  ],
+  "beam_vertical": [
+    { "key": "width", "type": "range", "min": 0.05, "max": 0.5, "step": 0.02, "default": 0.15, "label": "beam width" }
+  ],
+  "big_word_behind": [
+    { "key": "text", "type": "text", "default": "all works out", "label": "word" },
+    { "key": "fill", "type": "range", "min": 0.3, "max": 1, "step": 0.05, "default": 0.97, "label": "width fill" }
+  ],
+  "word_stack_wall": [
+    { "key": "text", "type": "text", "default": "works", "label": "word" },
+    { "key": "rows", "type": "range", "min": 2, "max": 9, "step": 1, "default": 5, "label": "rows" }
+  ],
+  "echo_row": [
+    { "key": "spread", "type": "range", "min": 0.3, "max": 2, "step": 0.05, "default": 0.75, "label": "echo spread" },
+    { "key": "lag", "type": "range", "min": 1, "max": 12, "step": 1, "default": 4, "label": "echo delay" }
+  ],
+  "halo_rings": [
+    { "key": "speed", "type": "range", "min": 0, "max": 8, "step": 0.5, "default": 2, "label": "ring speed" }
+  ],
+  "frame_inset": [
+    { "key": "size", "type": "range", "min": 0.2, "max": 0.9, "step": 0.05, "default": 0.55, "label": "inset size" }
+  ],
+  "venetian": [
+    { "key": "mode", "type": "select", "options": ["mood", "solid"], "default": "mood", "label": "blind fill" },
+    { "key": "band", "type": "range", "min": 0.03, "max": 0.3, "step": 0.01, "default": 0.09, "label": "blind height" }
+  ],
+  "pixel_me": [
+    { "key": "res", "type": "range", "min": 4, "max": 30, "step": 1, "default": 11, "label": "pixel resolution" }
+  ],
+  "spotlight": [
+    { "key": "dim", "type": "range", "min": 0, "max": 0.6, "step": 0.02, "default": 0.16, "label": "darkness floor" }
+  ],
+  "frame_trails": [
+    { "key": "lag", "type": "range", "min": 2, "max": 12, "step": 1, "default": 5, "label": "trail delay" }
+  ],
+  "type_orbit": [
+    { "key": "text", "type": "text", "default": "all works out", "label": "word" },
+    { "key": "speed", "type": "range", "min": 0, "max": 0.1, "step": 0.005, "default": 0.02, "label": "orbit speed" }
+  ],
+  "b6_body_loop": [
+    { "key": "loop", "type": "range", "min": 0, "max": 78, "step": 1, "default": 7, "label": "which fadi loop" }
+  ],
+  "a1_luma_grid": [{ "key": "cell", "type": "range", "min": 0.06, "max": 0.4, "step": 0.01, "default": 0.11, "label": "grid cell size" }],
+  "a3_ripple_grid": [{ "key": "cell", "type": "range", "min": 0.06, "max": 0.4, "step": 0.01, "default": 0.11, "label": "grid cell size" }],
+  "a4_checker_pop": [{ "key": "cell", "type": "range", "min": 0.06, "max": 0.4, "step": 0.01, "default": 0.14, "label": "grid cell size" }],
+  "a6_row_equalizer": [{ "key": "cell", "type": "range", "min": 0.03, "max": 0.2, "step": 0.01, "default": 0.055, "label": "row height" }],
+  "a7_grid_magnet": [{ "key": "cell", "type": "range", "min": 0.06, "max": 0.4, "step": 0.01, "default": 0.11, "label": "grid cell size" }],
+  "a8_diag_wipe_cells": [{ "key": "cell", "type": "range", "min": 0.06, "max": 0.4, "step": 0.01, "default": 0.11, "label": "grid cell size" }],
+  "a9_cell_jitter": [{ "key": "cell", "type": "range", "min": 0.08, "max": 0.4, "step": 0.01, "default": 0.14, "label": "grid cell size" }],
+  "a10_count_up_cells": [{ "key": "cell", "type": "range", "min": 0.08, "max": 0.4, "step": 0.01, "default": 0.14, "label": "grid cell size" }],
+  "e4_freeze_grid": [{ "key": "cell", "type": "range", "min": 0.12, "max": 0.5, "step": 0.02, "default": 0.25, "label": "cell size" }],
+  "h6_multi_board_wall": [{ "key": "cell", "type": "range", "min": 0.12, "max": 0.5, "step": 0.02, "default": 0.24, "label": "window size" }],
+  "i8_grid_pulse": [{ "key": "cell", "type": "range", "min": 0.05, "max": 0.3, "step": 0.01, "default": 0.11, "label": "grid spacing" }]
+}
