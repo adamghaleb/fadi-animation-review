@@ -190,7 +190,22 @@
   <body>
     <header>
       <h1>position comps</h1>
-      <span id="prog"></span><a href="index.html">← lab</a>
+      <span id="prog"></span
+      ><button
+        id="undo"
+        title="undo last swipe"
+        style="
+          background: #1b1b20;
+          color: #ffe400;
+          border: 1px solid #444;
+          border-radius: 8px;
+          padding: 6px 12px;
+          font-size: 14px;
+        "
+      >
+        ↩ back
+      </button>
+      <a href="index.html">← lab</a>
     </header>
     <div id="stage"></div>
     <div id="btns">
@@ -286,6 +301,13 @@
       document.getElementById("love").onclick = () => vote("love");
       document.getElementById("nope").onclick = () => vote("nope");
       document.getElementById("meh").onclick = () => vote("meh");
+      document.getElementById("undo").onclick = () => {
+        if (idx <= 0) return;
+        idx--;
+        delete fb[items[idx].id];
+        localStorage.setItem(KEY, JSON.stringify(fb));
+        render();
+      };
 
       function finish() {
         document.getElementById("btns").style.display = "none";
